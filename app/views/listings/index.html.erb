@@ -1,8 +1,9 @@
-<h1>Listing listings</h1>
+<h1>Textbook Listings</h1>
 
 <table>
   <thead>
     <tr>
+      <th>pic</th>      
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
+        <td><%= image_tag listing.image_url(:thumb) %></td>
         <td><%= listing.name %></td>
         <td><%= listing.description %></td>
         <td><%= listing.price %></td>
