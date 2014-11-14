@@ -1,13 +1,17 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
-
+  include CarrierWave::MiniMagick
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-   include CarrierWave::MiniMagick
+   
 
   # Choose what kind of storage to use for this uploader:
-  storage :dropbox
+  if Rails.env.production?
+    storage :dropbox
+  else
+    storage :file
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -32,7 +36,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-    version :medium do
+   version :medium do
      process :resize_to_fill => [400, 400]
    end
     version :thumb do

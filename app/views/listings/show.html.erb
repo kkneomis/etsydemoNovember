@@ -1,31 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @listing.image_url(:medium) %>
+<div class="row">
+  <div class="col-md-8"><%= image_tag @listing.image_url %></div>
+  <div class="col-md-4">
+  
+    <h3>Name: <%= @listing.name %></h3>
+    <p><strong>Description:</strong><%= @listing.description %></p>
+    <p><strong>Price:</strong> <%= number_to_currency(@listing.price) %></p>
+    <p><strong>Condition:</strong><%= @listing.condition %></p>
+    <p><strong>Course:</strong><%= @listing.course %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @listing.condition %>
-</p>
-
-<p>
-  <strong>Course:</strong>
-  <%= @listing.course %>
-</p>
 
 <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link" %> |
 <%= link_to 'Back', listings_path, class:"btn btn-link" %>
+  
+  </div>
+</div>
+
+
+
