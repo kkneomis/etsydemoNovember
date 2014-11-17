@@ -34,4 +34,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  #required for devise
+  config.action_mailer.default_url_options = { host: 'unshakable-highgarden-80-165491.use1-2.nitrousbox.com', port: 3000 }
 end

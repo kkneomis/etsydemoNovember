@@ -16,13 +16,14 @@ gem 'jbuilder', '~> 1.2'
 
 gem "mini_magick"
 
+gem 'devise'
+
 gem 'carrierwave'
 
 gem 'carrierwave-dropbox'
 
 gem "figaro"
 
-gem "mini_magick"
 
 gem 'carrierwave'
 group :production do
