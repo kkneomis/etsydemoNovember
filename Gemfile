@@ -25,7 +25,6 @@ gem 'carrierwave-dropbox'
 gem "figaro"
 
 
-gem 'carrierwave'
 group :production do
 
 gem 'pg'
