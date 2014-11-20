@@ -2,6 +2,7 @@
   <tr>
     <th class= "center">Image</th>
     <th class= "center">Name</th>
+    <th class= "center">Author</th>
     <th class= "center">Condition</th>
     <th class= "center">Price</th>
     <th class= "center">Action</th>
@@ -11,6 +12,7 @@
       <tr>
         <td><%= image_tag listing.image.url(:thumb) %></td>  
         <td><%= listing.name %></td>  
+        <td><%= listing.author %></td>  
         <td><%= listing.condition %></td>  
         <td><%= number_to_currency(listing.price) %></td> 
         <td>
