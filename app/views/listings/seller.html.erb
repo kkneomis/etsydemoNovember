@@ -31,8 +31,10 @@
       </tr>
     <% end %>
 </table>
- <% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
-<% end %>
+<div class="center">
+  <% if user_signed_in? %>
+    <%= link_to 'Post a book!', new_listing_path, class: "btn btn-success" %>
+  <% end %>
+</div>
 
  
