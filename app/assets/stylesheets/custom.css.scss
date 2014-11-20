@@ -1,18 +1,27 @@
-
-
-.container-fluid {
-  background-color: #001CED;
+.special{
+  color: blue;
+  font-weight: bold;
+  font-family: guardian-egyptt, georgia, serif;
+  
 }
 
-.navbar-default .navbar-brand{
+.navbar-inverse .navbar-brand{
   font-family: guardian-egyptt, georgia, serif;
   font-weight: 400;
-  color: #FFFFFF;
-  font-size: 30;
+  color: #D1CFFF;
+  font-size: 40px;
 }
 
+.navbar-inverse .navbar-nav >li >a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #D1CFFF;
+}
+
+
+
 .navbar-brand {
-  color: #000000;
   font-family: guardian-egyptt, georgia, serif;
   font-weight: 300;
 }
@@ -29,6 +38,7 @@
   h1, h2 {
       font-family: guardian-egyptt, georgia, serif;
   }
-    
 }
 
+
+body { padding-bottom: 70px; }

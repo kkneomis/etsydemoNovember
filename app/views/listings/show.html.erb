@@ -4,12 +4,12 @@
   <div class="col-md-8"><%= image_tag @listing.image_url(:medium) %></div>
   <div class="col-md-4">
   
-    <h3>Title: <%= @listing.name %></h3>
-    <p><strong>Description:</strong><%= @listing.description %></p>
-    <p><strong>Price:</strong> <%= number_to_currency(@listing.price) %></p>
-    <p><strong>Condition:</strong><%= @listing.condition %></p>
-    <p><strong>Course:</strong><%= @listing.course %></p>
-
+    <h3 class="bg-primary">Title: <%= @listing.name %></h3>
+    <div class="big-info">
+      <p><strong>Price:</strong> <%= number_to_currency(@listing.price) %></p>
+      <p><strong>Condition:</strong><%= @listing.condition %></p>
+      <p><strong>Course:</strong><%= @listing.course %></p>
+    </div>
 <% if current_user == @listing.user %>
   <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link" %> 
 <% end %>
