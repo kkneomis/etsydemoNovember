@@ -22,6 +22,8 @@ gem 'carrierwave'
 
 gem 'carrierwave-dropbox'
 
+gem 'twilio-ruby'
+
 gem "figaro"
 
 

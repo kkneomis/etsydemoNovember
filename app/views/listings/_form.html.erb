@@ -21,10 +21,13 @@
     <%= f.text_field :author, class:"form-control", placeholder:"List the author(s) of the book" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :price %><br>
-    <%= f.text_field :price, class:"form-control", placeholder:"Enter the price of the book" %>
-  </div>
+<%= f.label :price %>
+<div class="input-group">
+  <span class="input-group-addon">$<br></span>
+  <%= f.text_field :price, class:"form-control", placeholder:"Enter the price of the book" %>
+</div>
+
+
 
   <div class="form-group">
     <%= f.label :condition %><br>

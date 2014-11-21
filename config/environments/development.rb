@@ -37,4 +37,15 @@ Rails.application.configure do
   
   #required for devise
   config.action_mailer.default_url_options = { host: 'unshakable-highgarden-80-165491.use1-2.nitrousbox.com', port: 3000 }
+  
+  config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "MYDOMAIN.mailgun.org",
+  :user_name => "kkneomis@gmail.com",
+  :password => ""
+}
+  
 end
