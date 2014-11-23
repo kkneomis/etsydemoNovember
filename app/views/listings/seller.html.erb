@@ -23,7 +23,7 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="#"><%= link_to "View", listing, class: "btn btn-link" %></a></li>
+                  <li><a href="#"><%= link_to 'View', listing, class: "btn btn-link" %></a></li>
                   <li><a href="#"><%= link_to 'Edit', edit_listing_path(listing), class:"btn btn-link" %></a></li>
                   <li><a href="#"> <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %></a></li>
                </ul>
@@ -34,10 +34,10 @@
     <% end %>
 </table>
 
-<div class="center">
+
   <% if user_signed_in? %>
     <%= link_to 'Post a book!', new_listing_path, class: "btn btn-success" %>
   <% end %>
-</div>
+
 
  
