@@ -1,0 +1,30 @@
+<div class="center">
+  <h1> Your Purchase Request History </h1>
+</div>
+
+<table class="table table-bordered table table-striped">
+  <tr>
+    <th class= "center">Image</th>
+    <th class= "center">Item</th>
+    <th class= "center">Price</th>
+    <th class= "center">Bought from</th>
+    <th class= "center">Date purchased</th>
+  </tr>
+
+  <% @orders.each do |order| %>
+      <tr>
+        <td><%= image_tag order.listing.image.url(:thumb) %></td>  
+        <td><%= order.listing.name %></td>  
+        <td><%= number_to_currency(order.listing.price) %></td> 
+        <td><%= order.seller.name %></td>  
+        <td><%= order.created_at.strftime("%B %-d, %Y") %></td>  
+        
+      </tr>
+    <% end %>
+</table>
+
+
+  <% if user_signed_in? %>
+    <%= link_to 'Post a book!', new_listing_path, class: "btn btn-success" %>
+  <% end %>
+
