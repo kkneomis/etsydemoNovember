@@ -13,7 +13,6 @@
       <tr>
         <td><%= order.detail %></td>
         <td><%= link_to 'Show', listing_orders_path %></td>
-        <td><%= link_to 'Edit', edit_listing_orders %></td>
         <td><%= link_to 'Destroy', listing_orders_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -22,4 +21,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_orders_path %>
+
