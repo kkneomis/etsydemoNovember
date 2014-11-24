@@ -47,8 +47,6 @@ class OrdersController < ApplicationController
      @order.seller_id = @seller.id
 
 
-    ModelMailer.new_record_notification(@record).deliver
-
       respond_to do |format|
         if @order.save
           format.html { redirect_to root_url, notice: 'Order was successfully created.' }
