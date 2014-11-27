@@ -15,9 +15,13 @@
                 <p>Price: <%= number_to_currency(listing.price) %></p>
                 <p>Condition: <%= listing.condition %></p>
                 </div>
-                <p class="bg-warning">Owned by:<%= listing.user.name %></p>
-                <% if (user_signed_in?) && (current_user == listing.user) %>
-                <% end %>
+                <p class="bg-warning">Owned by:<%= listing.user.name %>  
+                  <% if (current_user != listing.user) %>
+                  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"> </span>
+                  <% end %>
+                </p>
+                
+                
               </div>
             </div>
         <% end %>

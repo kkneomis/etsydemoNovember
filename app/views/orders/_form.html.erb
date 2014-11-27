@@ -12,10 +12,18 @@
     </div>
   <% end %>
 
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">To:</label>
+    <div class="col-sm-10">
+      <p><%= @listing.user.name %></p>
+    </div>
+  </div>
+</form>
+
   <div class="form-group has-error has-feedback">
     <label class="control-label" for="inputError2"><%= f.label "Message" %><br></label>
    <%= f.text_area :detail,  class: "form-control", rows: "3" %>
-    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
     <span id="inputError2Status" class="sr-only"></span>
   </div>
 
