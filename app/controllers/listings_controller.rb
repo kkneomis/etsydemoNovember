@@ -11,8 +11,11 @@ def seller
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all.order("created_at DESC")
-  end
+    @query = Listing.search do
+        fulltext params[:search]
+    end
+    @listings = @query.results
+end
 
   # GET /listings/1
   # GET /listings/1.json

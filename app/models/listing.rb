@@ -8,4 +8,12 @@ class Listing < ActiveRecord::Base
   
   belongs_to :user
   has_many :orders
+  
+  searchable do
+    text :name, :boost => 3
+    text :author, :boost => 2
+    text :course
+  end
+  
+  
 end
