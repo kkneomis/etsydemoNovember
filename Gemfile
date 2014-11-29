@@ -14,9 +14,7 @@ gem 'carrierwave-dropbox'
 gem 'twilio-ruby'
 gem "figaro"
 gem 'sunspot_rails'
-group :development do
-    gem 'sunspot_solr'
-end
+gem 'sunspot_solr'
 
 group :production do
 
