@@ -13,10 +13,8 @@ gem 'carrierwave'
 gem 'carrierwave-dropbox'
 gem 'twilio-ruby'
 gem "figaro"
-gem 'sunspot_rails'
-group :development do
-  gem 'sunspot_solr'
-end
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 group :production do
 
 gem 'pg'

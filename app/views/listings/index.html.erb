@@ -7,34 +7,41 @@
 <div class="row">
   <div class="form-group">
     <%= form_tag listings_path, :method => :get do %>
-        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
+    <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
     <% end %>
   </div>
 </div>
 
 
 <div class="center"> 
-      <div class="row">
-        <% @listings.each do |listing| %>
+     
+        <% @listings.each_slice(4) do |list_group| %>
+            <div class="row">
+              <% list_group.each do |listing| %>
+              
             <div class="col-md-3">
              <%= link_to image_tag(listing.image.url(:thumb)), listing %>
               <div class="description"> 
                 <h3 class="bg-primary">Title: <%= listing.name %></h3>
+                
                 <div class="bg-info">
-                  <p>Author: <%= listing.author %></p>
+                 <p>Author: <%= listing.author %></p>
                 <p>Course: <%= listing.course %></p>
                 <p>Price: <%= number_to_currency(listing.price) %></p>
                 <p>Condition: <%= listing.condition %></p>
-                </div>
-                <p class="bg-warning">Owned by:<%= listing.user.name %>  
+                </div>  <!--- listing info --->
+  
+                <p class="bg-warning"> Owned by: <%= listing.user.name %>  
                   <% if (current_user != listing.user) %>
                   <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"> </span>
                   <% end %>
                 </p>
-                
-                
-              </div>
-            </div>
+              
+              </div> <!--- description --->
+  
+            </div> <!--- colmd3 --->   
+             <% end %>
+        </div> <!--- row class --->
         <% end %>
        </div>
 

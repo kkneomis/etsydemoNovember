@@ -1,3 +1,5 @@
+require 'elasticsearch/model'
+
 class Listing < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   
@@ -9,11 +11,10 @@ class Listing < ActiveRecord::Base
   belongs_to :user
   has_many :orders
   
-  searchable do
-    text :name, :boost => 3
-    text :author, :boost => 2
-    text :course
+
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+  
   end
-  
-  
-end
+
+Listing.import # for auto sync model with elastic search

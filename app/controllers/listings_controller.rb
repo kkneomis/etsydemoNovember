@@ -11,8 +11,14 @@ def seller
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all.order("created_at DESC")
-end
+   
+    if params[:q].blank?
+     @listings=Listing.all
+    else
+      @listings = Listing.search(params[:q]).records
+    end
+   
+   end
 
   # GET /listings/1
   # GET /listings/1.json

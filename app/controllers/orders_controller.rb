@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @listing = Listing.find(params[:listing_id])
-    
+
     @order.buyer_id = current_user.id
   end
 
@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
     @order.buyer_id = current_user.id
     @listing = Listing.find(params[:listing_id])
     @seller = @listing.user
-
+    ModelMailer.new_record_notification(@seller.email, @order.detail).deliver
     
     @order.listing_id = @listing.id
      @order.buyer_id = current_user.id

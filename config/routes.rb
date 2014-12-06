@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'request' => 'listings#request'
   get 'sales' => 'orders#sales'
   get 'purchases' => 'orders#purchases'
+  get 'search', to: 'search#search'
   root 'listings#index'
   
 
