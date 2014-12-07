@@ -84,6 +84,16 @@ Rails.application.configure do
   #required for devise
   config.action_mailer.default_url_options = { host: 'https://meccashare.herokuapp.com', port: 3000 }
   
+  config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "meccashare.herokuapp.com",
+  :user_name => "postmaster@meccashare.herokuapp.com",
+  :password => "e62ce6f1a0db56b9f0d9bbf2f29074eb"
+}
+  
  Elasticsearch::Model.client = Elasticsearch::Client.new host: 'http://paas:9ee5ce73cb3f846cba4b1d8f7d2fabeb@bofur-us-east-1.searchly.com'
   
   
