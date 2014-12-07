@@ -82,7 +82,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   #required for devise
-  config.action_mailer.default_url_options = { host: 'unshakable-highgarden-80-165491.use1-2.nitrousbox.com', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://meccashare.herokuapp.com', port: 3000 }
   
  Elasticsearch::Model.client = Elasticsearch::Client.new host: 'http://paas:9ee5ce73cb3f846cba4b1d8f7d2fabeb@bofur-us-east-1.searchly.com'
   
