@@ -84,7 +84,7 @@ Rails.application.configure do
   #required for devise
   config.action_mailer.default_url_options = { host: 'unshakable-highgarden-80-165491.use1-2.nitrousbox.com', port: 3000 }
   
-  Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
+  Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['https://meccashare.herokuapp.com/listings']
   
   
 end
