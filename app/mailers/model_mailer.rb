@@ -6,8 +6,11 @@ class ModelMailer < ActionMailer::Base
   #
   #  en.model_mailer.new_record_notification.subject
   #
-  def new_record_notification(email, message)
+  def new_record_notification(email, message, buyer, book, seller)
     @message = message
+    @buyer = buyer
+    @seller = seller
+    @book= book
     mail to: email , subject: "Welcome to MeccaShare!"
   end
   

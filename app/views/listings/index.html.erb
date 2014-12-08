@@ -3,17 +3,13 @@
   <h2> Books sold by students to students at Howard University </h2>
 </div>
 
-
-
-
-
-<div class="row">
-  <div class="form-group">
-    <%= form_tag listings_path, :method => :get do %>
-    <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
-    <% end %>
-  </div>
-</div>
+<div class="center">
+    <div class="form-group">
+            <%= form_tag listings_path, :method => :get do %>
+            <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
+            <% end %>
+    </div>
+    
 
 <div class="center">
     <div class="page-header">
@@ -49,7 +45,7 @@
              <% end %>
         </div> <!--- row class --->
         <% end %>
-       
+    </div>      
 
 
 <div class="center"> 
@@ -61,4 +57,4 @@
 </div>
 
 
- </div>
+ 

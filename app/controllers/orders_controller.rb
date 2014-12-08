@@ -33,14 +33,14 @@ class OrdersController < ApplicationController
   def edit
   end
 
-  # POST /orders
+  # POST /orders, 
   # POST /orders.json
   def create
     @order = Order.new(order_params)
     @order.buyer_id = current_user.id
     @listing = Listing.find(params[:listing_id])
     @seller = @listing.user
-    ModelMailer.new_record_notification(@seller.email, @order.detail).deliver
+    ModelMailer.new_record_notification(@seller.email, @order.detail, current_user.name, @listing.name, @listing.user.name).deliver
     
     @order.listing_id = @listing.id
      @order.buyer_id = current_user.id

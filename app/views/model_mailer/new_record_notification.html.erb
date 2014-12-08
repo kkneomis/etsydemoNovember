@@ -1,7 +1,9 @@
-<h1> Hello </h1>
+
+<h2> Hi <%=@seller %> </h2>
 <h3>
-  Someone wants to buy your book.
+  <%= @buyer %> wants to buy your book: <%= @book %>
 </h3>
-<p>Go to meccashare.herokuapp.com to continue the interaction or email them. <p> 
+
+<p> Here is the message they sent you:</p>
 
 <%= @message %>
