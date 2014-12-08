@@ -34,16 +34,31 @@
 }
 
 .jumbotron {
-  background-image: url('https://www.dropbox.com/s/1z1pteodjcr1zux/061213-national-hbcu-review-howard-university-campus-1.jpg?dl=0&raw=1');
-  h1, h2 {
+  background-image: url('mecca.png');
+  h1 {
       font-family: guardian-egyptt, georgia, serif;
       color: black;
       text-align: center;
+  }
+   h2 {
+      font-family: guardian-egyptt, georgia, serif;
+      color: black;
+      text-align: right;
+     font-size: 27px;
   }
 }
 
 .col-md-4 {
   font-family: guardian-egyptt, georgia, serif;
 }
-body { padding-bottom: 70px; }
 
+.navbar-static-top body { padding-bottom: 30px; }
+
+.description {
+       font-family: guardian-egyptt, georgia, serif;
+      color: black;
+      h3{
+        color: blue;
+      }
+}
+ 

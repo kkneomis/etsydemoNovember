@@ -1,7 +1,10 @@
 <div class="jumbotron">
-  <h1> Books being sold by students to students at Howard University </h1>
-  <h2> Scroll through to buy and sell textbooks, and save money! </h2>
+  <h1> MeccaShare </h1>
+  <h2> Books sold by students to students at Howard University </h2>
 </div>
+
+
+
 
 
 <div class="row">
@@ -22,18 +25,16 @@
             <div class="col-md-3">
              <%= link_to image_tag(listing.image.url(:thumb)), listing %>
               <div class="description"> 
-                <h3 class="bg-primary">Title: <%= listing.name %></h3>
+                <h3> <%= listing.name %></h3>
                 
                 <div class="bg-info">
-                 <p>Author: <%= listing.author %></p>
-                <p>Course: <%= listing.course %></p>
-                <p>Price: <%= number_to_currency(listing.price) %></p>
-                <p>Condition: <%= listing.condition %></p>
+                <p> <%= listing.course %></p>
+                  <p> <%= number_to_currency(listing.price) %></p>
                 </div>  <!--- listing info --->
   
                 <p class="bg-warning"> Owned by: <%= listing.user.name %>  
-                  <% if (current_user != listing.user) %>
-                  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"> </span>
+                  <% if (current_user == listing.user) %>
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
                   <% end %>
                 </p>
               
