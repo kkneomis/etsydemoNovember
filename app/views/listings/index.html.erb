@@ -17,7 +17,7 @@
 
 <div class="center">
     <div class="page-header">
-      <h1>Books currently being sold by Howard Students <br> <small>Click on a book for more details</small></h1>
+      <h1>Books currently being sold by Howard Students <br> <small>Click on a book for more details or <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %></small></h1>
     </div>
 </div>
 
@@ -49,14 +49,14 @@
              <% end %>
         </div> <!--- row class --->
         <% end %>
-       </div>
+       
 
 
 <div class="center"> 
     <div class= "form-group">
-      <% if user_signed_in? %>
-        <%= link_to 'Post a book!', new_listing_path, class: "btn btn-success btn-lg" %>
-      <% end %>
+   
+        <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary btn-lg" %>
+
     </div>
 </div>
 
