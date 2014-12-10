@@ -6,4 +6,4 @@ railclass AddFieldsToListings < ActiveRecord::Migration
     add_column :listings, :link, :string
     add_column :listings, :is_active, :boolean
   end
-
+end
