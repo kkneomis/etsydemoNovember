@@ -15,6 +15,9 @@ gem 'twilio-ruby'
 gem "figaro"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'jquery-turbolinks'
+gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate-bootstrap'
 group :production do
 
 gem 'pg'

@@ -6,6 +6,10 @@ class CreateListings < ActiveRecord::Migration
       t.decimal :price
       t.string :condition
       t.string :course
+      t.string :isbn
+      t.string :picurl
+      t.string :aprice
+      t.string :link
 
       t.timestamps
     end

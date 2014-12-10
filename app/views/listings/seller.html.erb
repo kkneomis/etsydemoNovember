@@ -16,18 +16,17 @@
         <td><%= listing.condition %></td>  
         <td><%= number_to_currency(listing.price) %></td> 
         <td>
-             <div class="btn-group">
-                <button type="button" class="btn btn-success ">Action</button>
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
+             
+                    <!-- Single button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              Action <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
                   <li><a href="#"><%= link_to 'View', listing, class: "btn btn-link" %></a></li>
                   <li><a href="#"><%= link_to 'Edit', edit_listing_path(listing), class:"btn btn-link" %></a></li>
-                  <li><a href="#"> <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %></a></li>
-               </ul>
-            </div>
+                  <li><a href="#"> <%= link_to 'Destroy', listing, :active => false, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %></a></li>
+            </ul>
 
         </td>
         

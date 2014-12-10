@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
 
       respond_to do |format|
         if @order.save
-          format.html { redirect_to root_url, notice: 'Order was successfully created.' }
+          format.html { redirect_to root_url, notice: 'Your book request was sent successfully.' }
           format.json { render action: 'show', status: :created, location: @order }
         else
           format.html { render action: 'new' }

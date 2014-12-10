@@ -1,16 +1,6 @@
-<h1>Testbook Search</h1>
+<h1>Amazon add listings</h1>
  
-<%= form_for search_path, method: :get do |f| %>
-  <p>
-    <%= f.label "Search for" %>
-    <%= text_field_tag :q, params[:q] %>
-    <%= submit_tag "Go", name: nil %>
-  </p>
+<%= form_tag root_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import CSV" %>
 <% end %>
- 
-<% @listings.each do |listing| %>
-        <td><%= listing.name %></td>  
-        <td><%= listing.author %></td>  
-        <td><%= listing.condition %></td>  
-        <td><%= number_to_currency(listing.price) %></td> 
-    <% end %>

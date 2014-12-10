@@ -1,8 +1,19 @@
+
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
 
+ def import
+    begin
+       CSV.foreach(params[:file], headers: true) do |row|
+          Listing.create! row.to_hash
+       end
+      redirect_to root_url, notice: "Listings imported."
+    rescue
+      redirect_to root_url, notice: "Invalid CSV file format."
+    end
+  end
   
 def seller
     @listings = Listing.where(user: current_user).order("created_at DESC")
@@ -13,9 +24,9 @@ def seller
   def index
    
     if params[:q].blank?
-     @listings=Listing.all
+     @listings=Listing.paginate(:page => params[:page], :per_page => 16)
     else
-      @listings = Listing.search(params[:q]).records
+      @listings = Listing.search(params[:q]).records.paginate(:page => params[:page], :per_page => 16)
     end
    
    end

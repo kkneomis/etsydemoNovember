@@ -9,7 +9,7 @@
             <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
             <% end %>
     </div>
-    
+
 
 <div class="center">
     <div class="page-header">
@@ -47,10 +47,12 @@
         <% end %>
     </div>      
 
-
+  
+  
 <div class="center"> 
     <div class= "form-group">
-   
+         <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
+      <br>
         <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary btn-lg" %>
 
     </div>
