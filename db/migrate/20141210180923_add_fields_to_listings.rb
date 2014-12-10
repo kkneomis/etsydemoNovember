@@ -1,4 +1,4 @@
-railclass AddFieldsToListings < ActiveRecord::Migration
+class AddFieldsToListings < ActiveRecord::Migration
   def change
     add_column :listings, :isbn, :string
     add_column :listings, :picurl, :string
