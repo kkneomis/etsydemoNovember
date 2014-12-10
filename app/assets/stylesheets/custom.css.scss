@@ -75,3 +75,17 @@
 .navbar-nav li:hover {
   background-color: black;
 }
+
+
+
+.pic {
+  -webkit-transition: all .5s ease;
+     -moz-transition: all .5s ease;
+       -o-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+          transition: all .5s ease;
+}
+ 
+.pic:hover {
+  -webkit-filter: grayscale(75%);
+}

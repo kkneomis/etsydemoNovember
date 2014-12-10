@@ -9,7 +9,7 @@
             <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
             <% end %>
     </div>
-
+    
 
 <div class="center">
     <div class="page-header">
@@ -24,7 +24,9 @@
               <% list_group.each do |listing| %>
               
             <div class="col-md-3">
-             <%= link_to image_tag(listing.image.url(:thumb)), listing %>
+              <div class="pic">
+                 <%= link_to image_tag(listing.image.url(:thumb)), listing %>
+              </div>
               <div class="description"> 
                 <h3> <%= listing.name %></h3>
                 

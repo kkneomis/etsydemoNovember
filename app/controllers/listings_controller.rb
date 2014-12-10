@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
-
+  
  def import
     begin
        CSV.foreach(params[:file], headers: true) do |row|
@@ -16,7 +16,7 @@ class ListingsController < ApplicationController
   end
   
 def seller
-    @listings = Listing.where(user: current_user).order("created_at DESC")
+  @listings = Listing.where(user: current_user).where(is_active: true).order("created_at DESC")
   end
   
   # GET /listings
@@ -24,9 +24,9 @@ def seller
   def index
    
     if params[:q].blank?
-     @listings=Listing.paginate(:page => params[:page], :per_page => 16)
+      @listings=Listing.where(is_active: true).paginate(:page => params[:page], :per_page => 16)
     else
-      @listings = Listing.search(params[:q]).records.paginate(:page => params[:page], :per_page => 16)
+      @listings = Listing.search(params[:q]).records.where(is_active: true).paginate(:page => params[:page], :per_page => 16)
     end
    
    end
@@ -49,6 +49,7 @@ def seller
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
+    @listing.is_active = true
     @listing.user_id = current_user.id
     respond_to do |format|
       if @listing.save
@@ -78,14 +79,14 @@ def seller
   # DELETE /listings/1
   # DELETE /listings/1.json
   def destroy
-    @listing.destroy
+    @listing.update(is_active: false)
     respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
+      format.html { redirect_to listings_url, notice: 'This Book has been marked as sold!' }
       format.json { head :no_content }
     end
   end
 
-  private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
       @listing = Listing.find(params[:id])
@@ -101,5 +102,19 @@ def seller
       redirect_to root_url, alert: "Sorry, this listing belongs to someone else"\
       end
   end
+  
+  def archive        
+    @listing.update(is_active: false)
+    respond_to do |format|
+      if @listing.update(listing_params)
+        format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
+        format.json { render :show, status: :ok, location: @listing }
+      else
+        format.html { render :edit }
+        format.json { render json: @listing.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
   
 end

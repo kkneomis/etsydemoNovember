@@ -3,7 +3,7 @@
   <div class="col-md-6"><%= image_tag @listing.image_url(:medium) %></div>
   <div class="col-md-4">
   
-    <h3 class="bg-primary">Title: <%= @listing.name %></h3>
+    <h3 class="bg-primary"> <%= @listing.name %></h3>
     <div class="bg-info">
       <p><strong>Author:</strong> <%= @listing.author %></p>
       <p><strong>Price:</strong> <%= number_to_currency(@listing.price) %></p>

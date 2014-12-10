@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
   get 'seller' => 'listings#seller'
-  get 'request' => 'listings#request'
   get 'sales' => 'orders#sales'
   get 'purchases' => 'orders#purchases'
   get 'search', to: 'search#search'
+  get 'archive' => 'listings#index'
   root 'listings#index'
   
 
