@@ -1,7 +1,9 @@
-<div class="jumbotron">
-  <h1> MeccaShare </h1>
-  <h2> Books sold by students to students at Howard University </h2>
-</div>
+<% if @listings.current_page == 1 %> 
+  <div class="jumbotron">
+    <h1> MeccaShare </h1>
+    <h2> Books sold by students to students at Howard University </h2>
+  </div>
+<% end %>
 
 <div class="center">
     <div class="form-group">
@@ -14,6 +16,7 @@
 <div class="center">
     <div class="page-header">
       <h1>Books currently being sold by Howard Students <br> <small>Click on a book for more details or <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %></small></h1>
+      <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
     </div>
 </div>
 

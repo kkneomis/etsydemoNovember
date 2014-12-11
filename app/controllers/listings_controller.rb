@@ -24,9 +24,9 @@ def seller
   def index
    
     if params[:q].blank?
-      @listings=Listing.where(is_active: true).paginate(:page => params[:page], :per_page => 16)
+      @listings=Listing.where(is_active: true).order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
     else
-      @listings = Listing.search(params[:q]).records.where(is_active: true).paginate(:page => params[:page], :per_page => 16)
+      @listings = Listing.search(params[:q]).records.where(is_active: true).order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
     end
    
    end

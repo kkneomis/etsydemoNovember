@@ -5,17 +5,17 @@
 <table class="table table-bordered table table-striped">
   <tr>
     <th class= "center">Image</th>
-    <th class= "center">Item</th>
-    <th class= "center">Price</th>
+    <th class= "center">Item Details</th>
+    <th class= "center">Message</th>
     <th class= "center">Bought from</th>
     <th class= "center">Date purchased</th>
   </tr>
 
   <% @orders.each do |order| %>
       <tr>
-        <td><%= image_tag order.listing.image.url(:thumb) %></td>  
-        <td><%= order.listing.name %></td>  
-        <td><%= number_to_currency(order.listing.price) %></td> 
+        <td><%= image_tag order.listing.image.url(:thumb) %> </td>  
+        <td><p>Title: </p><%= order.listing.name %> <br><p>Price: </p> <%= number_to_currency(order.listing.price) %> </td>  
+        <td><%= order.detail %></td> 
         <td><%= order.seller.name %></td>  
         <td><%= order.created_at.strftime("%B %-d, %Y") %></td>  
         

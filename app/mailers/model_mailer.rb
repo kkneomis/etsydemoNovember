@@ -11,7 +11,7 @@ class ModelMailer < ActionMailer::Base
     @buyer = buyer
     @seller = seller
     @book= book
-    mail to: email , subject: "Welcome to MeccaShare!"
+    mail to: email , subject: "You have a new book request on MeccaShare!"
   end
   
 
