@@ -1,11 +1,9 @@
 class SearchController < ApplicationController
   
   def search
-    if params[:q].nil?
-      @listings = []
-    else
-      @listings = Listing.search params[:q]
-    end
+
+      @listings = Listing.search(params[:q]).records.where(is_active: true).order(:price).paginate(:page => params[:page], :per_page => 16)
+  
 end
   
 end

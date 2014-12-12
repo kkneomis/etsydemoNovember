@@ -18,6 +18,8 @@ gem 'elasticsearch-rails'
 gem 'jquery-turbolinks'
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
+gem 'iconv'
+gem 'smarter_csv'
 group :production do
 
 gem 'pg'

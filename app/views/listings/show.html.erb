@@ -1,9 +1,15 @@
 
 <div class="row">
-  <div class="col-md-6"><%= image_tag @listing.image_url(:medium) %></div>
+        <div class="col-md-6">
+              <% if (@listing.user_id == 7) && (!@listing.picurl.nil?) %>
+                  <%= link_to image_tag(@listing.picurl), @listing %>
+                <% else %>
+          <%= link_to image_tag(@listing.image.url(:medium)), @listing %>
+                <% end %>
+          </div>
   <div class="col-md-4">
   
-    <h3 class="bg-primary"> <%= @listing.name %></h3>
+    <h1 > <%= @listing.name %></h1>
     <div class="bg-info">
       <p><strong>Author:</strong> <%= @listing.author %></p>
       <p><strong>Price:</strong> <%= number_to_currency(@listing.price) %></p>

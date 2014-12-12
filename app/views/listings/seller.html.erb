@@ -10,7 +10,13 @@
 
    <% @listings.each do |listing| %>
       <tr>
-        <td><%= image_tag listing.image.url(:thumb) %></td>  
+        <td>
+          <% if listing.user_id == 7 %>
+                  <%= link_to image_tag(listing.picurl), listing %>
+                <% else %>
+                  <%= link_to image_tag(listing.image.url(:thumb)), listing %>
+                <% end %>
+        </td>  
         <td><%= listing.name %></td>  
         <td><%= listing.author %></td>  
         <td><%= listing.condition %></td>  

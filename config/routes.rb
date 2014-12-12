@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'products/index'
+
+  get 'products/import'
+
   devise_for :users
   devise_for :views
   resources :listings
@@ -11,10 +15,13 @@ Rails.application.routes.draw do
     collection { post :import }
   end
  
-  
+  resources :products do
+    collection { post :import}
+  end
   
   get 'pages/about'
   get 'pages/contact'
+  get 'pages/user'
   get 'seller' => 'listings#seller'
   get 'sales' => 'orders#sales'
   get 'purchases' => 'orders#purchases'

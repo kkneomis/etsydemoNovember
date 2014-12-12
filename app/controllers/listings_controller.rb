@@ -3,17 +3,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
-  
- def import
-    begin
-       CSV.foreach(params[:file], headers: true) do |row|
-          Listing.create! row.to_hash
-       end
-      redirect_to root_url, notice: "Listings imported."
-    rescue
-      redirect_to root_url, notice: "Invalid CSV file format."
-    end
-  end
+
   
 def seller
   @listings = Listing.where(user: current_user).where(is_active: true).order("created_at DESC")
@@ -22,7 +12,6 @@ def seller
   # GET /listings
   # GET /listings.json
   def index
-   
     if params[:q].blank?
       @listings=Listing.where(is_active: true).order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
     else
@@ -85,8 +74,13 @@ def seller
       format.json { head :no_content }
     end
   end
+  
+  def import
+    Listing.import(params[:file])
+    redirect_to listings_path, notice: "Listing created successfully"
+  end 
 
-
+  private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
       @listing = Listing.find(params[:id])
@@ -103,18 +97,6 @@ def seller
       end
   end
   
-  def archive        
-    @listing.update(is_active: false)
-    respond_to do |format|
-      if @listing.update(listing_params)
-        format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
-        format.json { render :show, status: :ok, location: @listing }
-      else
-        format.html { render :edit }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
-      end
-    end
-  end
   
   
 end

@@ -1,6 +1,58 @@
-<h1>Amazon add listings</h1>
+<div class="center">
+    <div class="page-header">
+      <h1>Search results for: "<%= params[:q] %>" </h1>
+      <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
+    </div>
+</div>
+<div class="center">
+    <div class="form-group">
+      <%= form_tag search_path, :method => :get do %>
+            <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
+            <% end %>
+    </div>
+
+     
+        <% @listings.each do |listing| %>
+          <div class="row">
+            <div class="col-md-2">
+              
+              <div class="pic"> 
+                <% if (listing.user_id == 7) && (!listing.picurl.nil?) %>
+                  <%= link_to image_tag(listing.picurl), listing %>
+                <% else %>
+                  <%= link_to image_tag(listing.image.url(:thumb)), listing %>
+                <% end %>
+              </div>
+         
+            </div> <!--- colmd1 --->   
+             <div class="col-md-6">
+             <div class="description"> 
+                <h3> <%= listing.name %></h3>
+                <hp> by: <%= listing.author %></hp>
+               
+                <p> <%= listing.course %></p>
+                  <p> <%= number_to_currency(listing.price) %></p>
+                </div>  <!--- listing info --->
+                
+                <% if listing.user_id == 7 %>
+                <div class="form-group">
+                      <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
+            
+                <%end %>
+                
+              <% if listing.user_id != 7 %>
+                <p class="bg-warning"> Owned by: <%= listing.user.name %>  
+                  <% if (current_user == listing.user) %>
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+                  <% end %>
+                </p>
+              <% end %>
+              </div> <!--- description --->
+          </div> <!--- colmd1 --->
+          
+  </div> <!--- row ---> 
+  <br>
+        <% end %>
+        
+
  
-<%= form_tag root_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import CSV" %>
-<% end %>

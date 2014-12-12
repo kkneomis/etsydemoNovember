@@ -1,18 +1,24 @@
 <% if @listings.current_page == 1 %> 
   <div class="jumbotron">
-    <h1> MeccaShare </h1>
+    <h1> BisonShare </h1>
     <h2> Books sold by students to students at Howard University </h2>
   </div>
 <% end %>
 
 <div class="center">
     <div class="form-group">
-            <%= form_tag listings_path, :method => :get do %>
+      <%= form_tag search_path, :method => :get do %>
             <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
             <% end %>
     </div>
     
+<h2>Import Listings</h2>
 
+<%= form_tag import_listings_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+  
 <div class="center">
     <div class="page-header">
       <h1>Books currently being sold by Howard Students <br> <small>Click on a book for more details or <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %></small></h1>
@@ -27,31 +33,46 @@
               <% list_group.each do |listing| %>
               
             <div class="col-md-3">
+              
               <div class="pic">
-                 <%= link_to image_tag(listing.image.url(:thumb)), listing %>
+                 
+                <% if (listing.user_id == 7) && (!listing.picurl.nil?) %>
+                  <%= link_to image_tag(listing.picurl), listing %>
+                <% else %>
+                  <%= link_to image_tag(listing.image.url(:thumb)), listing %>
+                <% end %>
               </div>
+            
               <div class="description"> 
-                <h3> <%= listing.name %></h3>
+                <h4> <%= listing.name %></h4>
                 
                 <div class="bg-info">
                 <p> <%= listing.course %></p>
                   <p> <%= number_to_currency(listing.price) %></p>
                 </div>  <!--- listing info --->
-  
+                
+                <% if listing.user_id == 7 %>
+                <div class="form-group">
+                      <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
+                </div>
+                <%end %>
+                
+              <% if listing.user_id != 7 %>
                 <p class="bg-warning"> Owned by: <%= listing.user.name %>  
                   <% if (current_user == listing.user) %>
                   <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
                   <% end %>
                 </p>
-              
+              <% end %>
               </div> <!--- description --->
-  
+            
             </div> <!--- colmd3 --->   
              <% end %>
         </div> <!--- row class --->
         <% end %>
     </div>      
 
+  
   
   
 <div class="center"> 
