@@ -14,39 +14,42 @@
      
         <% @listings.each do |listing| %>
           <div class="row">
+            
             <div class="col-md-2">
-              
               <div class="pic"> 
-                <% if (listing.user_id == 7) && (!listing.picurl.nil?) %>
+                <% if (listing.amazon == true)%>
                   <%= link_to image_tag(listing.picurl), listing %>
                 <% else %>
                   <%= link_to image_tag(listing.image.url(:thumb)), listing %>
                 <% end %>
-              </div>
-         
-            </div> <!--- colmd1 --->   
+              </div><!--- pic ---> 
+            </div> <!--- colmd2 ---> 
+            
+            
              <div class="col-md-6">
              <div class="description"> 
                 <h3> <%= listing.name %></h3>
                 <hp> by: <%= listing.author %></hp>
-               
                 <p> <%= listing.course %></p>
+               
+                <% if listing.amazon == true %>
+                     <p><%= listing.aprice %> 
+                <%else %>
                   <p> <%= number_to_currency(listing.price) %></p>
-                </div>  <!--- listing info --->
-                
-                <% if listing.user_id == 7 %>
+                <%end %>
+                <% if listing.amazon == true %>
                 <div class="form-group">
                       <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
-            
                 <%end %>
                 
-              <% if listing.user_id != 7 %>
-                <p class="bg-warning"> Owned by: <%= listing.user.name %>  
+              <% if listing.amazon == nil %>
+                <p> Owned by: <%= listing.user.name %>  
                   <% if (current_user == listing.user) %>
                   <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
                   <% end %>
                 </p>
               <% end %>
+               </div> <!---- form group --->
               </div> <!--- description --->
           </div> <!--- colmd1 --->
           

@@ -8,7 +8,7 @@
 .navbar-inverse .navbar-brand{
   font-family: guardian-egyptt, georgia, serif;
   font-weight: 400;
-  color: #D1CFFF;
+  color: white;
   font-size: 40px;
 }
 
@@ -16,7 +16,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: bold;
-  color: #D1CFFF;
+  color: white;
 }
 
 
@@ -33,7 +33,7 @@
  text-align: center;
 }
 
-.jumbotron {
+.index .jumbotron {
   background-image: url('https://www.dropbox.com/s/uutdcyknbijbjgx/meccashare.png?dl=0&raw=1');
   h1 {
       font-family: guardian-egyptt, georgia, serif;
@@ -44,6 +44,20 @@
       font-family: guardian-egyptt, georgia, serif;
       color: black;
       text-align: right;
+     font-size: 27px;
+  }
+}
+ .jumbotron {
+  background-image: url('https://www.dropbox.com/s/6q9vk7j0x1br9tz/Life-of-Pix-free-stock-photos-washington-dc-back-Marko-Berndt.jpg?dl=0&raw=1');
+      width:1000px;
+  h1 {
+      font-family: guardian-egyptt, georgia, serif;
+      color: Black;
+
+  }
+   h2 {
+      font-family: guardian-egyptt, georgia, serif;
+      color: Black;
      font-size: 27px;
   }
 }

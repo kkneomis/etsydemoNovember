@@ -1,8 +1,8 @@
 <% if @listings.current_page == 1 %> 
-  <div class="jumbotron">
-    <h1> BisonShare </h1>
-    <h2> Books sold by students to students at Howard University </h2>
-  </div>
+   <div class="index">
+    <div class="jumbotron">
+      <br><br><br> <br><br><br> <br><br><br>
+      </div>
 <% end %>
 
 <div class="center">
@@ -36,7 +36,7 @@
               
               <div class="pic">
                  
-                <% if (listing.user_id == 7) && (!listing.picurl.nil?) %>
+                <% if (listing.user_id == 33) && (!listing.picurl.nil?) %>
                   <%= link_to image_tag(listing.picurl), listing %>
                 <% else %>
                   <%= link_to image_tag(listing.image.url(:thumb)), listing %>
@@ -51,13 +51,13 @@
                   <p> <%= number_to_currency(listing.price) %></p>
                 </div>  <!--- listing info --->
                 
-                <% if listing.user_id == 7 %>
+                <% if listing.user_id == 33 %>
                 <div class="form-group">
                       <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
                 </div>
                 <%end %>
                 
-              <% if listing.user_id != 7 %>
+              <% if listing.user_id != 33 %>
                 <p class="bg-warning"> Owned by: <%= listing.user.name %>  
                   <% if (current_user == listing.user) %>
                   <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>

@@ -1,0 +1,19 @@
+<div class="jumbotron">  
+  <div class="center">
+
+  <h1> BisonShare </h1>
+  
+   <h2> Books sold by students to students at Howard University </h2>
+  <br> <br> <br> <br><br> <br> 
+    
+
+
+    <div class="form-group">
+      <%= link_to  "Enter", root_path, class:"btn btn-primary btn-lg" %>
+      <br> <br> <br> <br><br> <br> <br> 
+      <%= form_tag search_path, :method => :get do %>
+            <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
+            <% end %>
+    </div>
+    <br><br>  <br>  <br><br>  <br> 
+</div>
