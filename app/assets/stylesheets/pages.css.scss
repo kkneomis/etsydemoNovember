@@ -1,10 +1,35 @@
 body.welcome 
 {
   background: {
-    image: url('https://www.dropbox.com/s/21qow6sr6puk24h/newback.png?dl=0&raw=1');
+    image: url('https://www.dropbox.com/s/6of2oyrtprwonqs/three-bison-buffalo-walking-on-snow.jpg?dl=0&raw=1');
  }
 }
 
-.searchbox{
-   vertical-align: middle;
+
+
+.about{
+  h1{
+    color: #1A1160;
+    font-family: guardian-egyptt, georgia, serif;
+    text-align: center;
+  }
+   h3{
+    color:#1A1160;
+    width: 950px;
+    font-family: guardian-egyptt, georgia, serif;
+  }
+  p{
+    font-family: guardian-egyptt, georgia, serif;
+    background-color: white;
+    font-size: 16px;
+    color:#1A1160;
+    line-height: 2em;
+  }
 }
+
+
+.searchbox .form-group{
+   	transform: translateY(-50%);
+}
+
+

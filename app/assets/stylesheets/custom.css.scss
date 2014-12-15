@@ -1,7 +1,6 @@
 
 body{
- background-color: blue; 
-  background-image: url("https://www.dropbox.com/s/zmkcu6u3mvx9u75/graphcoders-lil-fiber.png?dl=0&raw=1");
+ background-color: #B7DBFF; 
   }
 
 .special{
@@ -11,24 +10,23 @@ body{
   
 }
 
-.container-fuid {
-  background-image: url("https://www.dropbox.com/s/zmkcu6u3mvx9u75/graphcoders-lil-fiber.png?dl=0&raw=1");
-  background-color: #0e2e72;
+  .container-fuid {
+  background-image: url("https://www.dropbox.com/lightbox/home/Apps&raw=1")
 }
 
-.navbar-inverse .navbar-brand{
-  font-family: guardian-egyptt, georgia, serif;
+.navbar-default .navbar-brand{
+  font-family: Sans-serif, georgia, serif;
   font-weight: 400;
-  color: white;
+  color: #1A1160;
   font-size: 40px;
-  background-color: #1A1160;
+
 }
 
-.navbar-inverse .navbar-nav >li >a {
-  font-family: guardian-egyptt, georgia, serif;
-  font-size: 20px;
+.navbar-default .navbar-nav >li >a {
+  font-family: Sans-serif, Times, serif;
+  font-size: 16px;
   font-weight: bold;
-  color: white;
+  color: #1A1160;
 }
 
 
@@ -39,7 +37,7 @@ body{
 }
   
 .navbar-right{
-  color: white;
+  color: #1A1160;
 }
 .center {
  text-align: center;

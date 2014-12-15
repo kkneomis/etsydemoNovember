@@ -20,6 +20,8 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 gem 'iconv'
 gem 'smarter_csv'
+gem 'owlcarousel-rails'
+
 group :production do
 
 gem 'pg'

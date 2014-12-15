@@ -15,8 +15,6 @@
 //= require jquery_ujs
 //= require_tree .
 
-
-
 $(document).on("page:change", function() {
      $(".navbar .dropdown").hover((function() {
          $(this).find(".dropdown-menu").first().stop(true,

@@ -1,8 +1,14 @@
 <body class="container welcome"> 
+
+
   
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <div class="center"> 
   <div class="searchbox">
     <div class="form-group">
       <%= form_tag search_path, :method => :get do %>
-            <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
+      <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search here for your textbooks" %>
             <% end %>
     </div>
+    
+   </div>

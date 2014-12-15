@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'purchases' => 'orders#purchases'
   get 'search', to: 'search#search'
   get 'archive' => 'listings#index'
-  root 'listings#index'
+  root 'pages#home'
   
 
 
