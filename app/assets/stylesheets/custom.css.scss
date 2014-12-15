@@ -1,3 +1,9 @@
+
+body{
+ background-color: blue; 
+  background-image: url("https://www.dropbox.com/s/zmkcu6u3mvx9u75/graphcoders-lil-fiber.png?dl=0&raw=1");
+  }
+
 .special{
   color: blue;
   font-weight: bold;
@@ -5,16 +11,22 @@
   
 }
 
+.container-fuid {
+  background-image: url("https://www.dropbox.com/s/zmkcu6u3mvx9u75/graphcoders-lil-fiber.png?dl=0&raw=1");
+  background-color: #0e2e72;
+}
+
 .navbar-inverse .navbar-brand{
   font-family: guardian-egyptt, georgia, serif;
   font-weight: 400;
   color: white;
   font-size: 40px;
+  background-color: #1A1160;
 }
 
 .navbar-inverse .navbar-nav >li >a {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: guardian-egyptt, georgia, serif;
+  font-size: 20px;
   font-weight: bold;
   color: white;
 }
@@ -47,6 +59,7 @@
      font-size: 27px;
   }
 }
+
  .jumbotron {
   background-image: url('https://www.dropbox.com/s/6q9vk7j0x1br9tz/Life-of-Pix-free-stock-photos-washington-dc-back-Marko-Berndt.jpg?dl=0&raw=1');
       width:1000px;
@@ -66,7 +79,7 @@
   font-family: guardian-egyptt, georgia, serif;
 }
 
-.navbar-static-top body { padding-bottom: 30px; }
+.navbar body { padding-bottom: 30px; }
 
 .description {
        font-family: guardian-egyptt, georgia, serif;
@@ -101,4 +114,10 @@
  
 .pic:hover {
   -webkit-filter: grayscale(75%);
+}
+
+.description{
+  p {
+    color: #062655;
+  }
 }

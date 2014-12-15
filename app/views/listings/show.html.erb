@@ -9,24 +9,33 @@
           </div>
   <div class="col-md-4">
   
-    <h1 > <%= @listing.name %></h1>
-    <div class="bg-info">
-      <p><strong>Author:</strong> <%= @listing.author %></p>
-      <p><strong>Price:</strong> <%= number_to_currency(@listing.price) %></p>
-      <p><strong>Condition:</strong><%= @listing.condition %></p>
-      <p><strong>Course:</strong><%= @listing.course %></p>
-      <p class="bg-warning">Owned by:<%= @listing.user.name %></p>
-    </div>
+    <h1 > <%= @listing.name.upcase %></h1>
+
+      <h3><strong>by:</strong> <%= @listing.author %></h3>
+      <h3><strong>price:</strong> <%= number_to_currency(@listing.price) %></h3>
+      <h3><strong>condition:</strong><%= @listing.condition %></h3>
+      <h3><strong>course:</strong><%= @listing.course %></h3>
+       <% if @listing.amazon == false %>
+            <h3 class="bg-warning">Owned by:<%= @listing.user.name %></h3>
+      <% end %>
+
 
  <%= link_to 'Back', listings_path, class:"btn btn-link" %>    
     <br>
+ <% if @listing.amazon == false %>  
+    <% if current_user != @listing.user %>
+     <div class="center">
+       <%= link_to "Request this book", new_listing_order_path(@listing), class: "btn btn-success" %>
+     </div>
+    <% end %>
+  <% end %>
     
-<% if current_user != @listing.user %>
- <div class="center">
-   <%= link_to "Request this book", new_listing_order_path(@listing), class: "btn btn-success" %>
- </div>
-<% end %>
-
+                 <div class="form-group">
+                  <% if @listing.amazon == true %>
+                      <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
+                  <% end %>
+                </div> 
+    
 <% if current_user == @listing.user %>
   <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link" %>  
 <% end %>

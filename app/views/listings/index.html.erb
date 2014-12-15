@@ -3,6 +3,7 @@
     <div class="jumbotron">
       <br><br><br> <br><br><br> <br><br><br>
       </div>
+</div>
 <% end %>
 
 <div class="center">
@@ -15,7 +16,7 @@
   
 <div class="center">
     <div class="page-header">
-      <h1>Books currently being sold by Howard Students <br> <small>Click on a book for more details or <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %></small></h1>
+      <h1>Books listings!  <br> <small>Click on a book for more details or <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %></small></h1>
       <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
     </div>
 </div>
@@ -29,35 +30,26 @@
             <div class="col-md-3">
               
               <div class="pic">
-                 
-                <% if (listing.user_id == 33) && (!listing.picurl.nil?) %>
-                  <%= link_to image_tag(listing.picurl), listing %>
-                <% else %>
                   <%= link_to image_tag(listing.image.url(:thumb)), listing %>
-                <% end %>
               </div>
             
               <div class="description"> 
-                <h4> <%= listing.name %></h4>
-                
-                <div class="bg-info">
+                <h4> <%= listing.name.upcase %></h4>
                 <p> <%= listing.course %></p>
                   <p> <%= number_to_currency(listing.price) %></p>
-                </div>  <!--- listing info --->
-                
-                <% if listing.user_id == 33 %>
                 <div class="form-group">
+                  <% if listing.amazon == true %>
                       <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
+                  <% end %>
                 </div>
-                <%end %>
-                
-              <% if listing.user_id != 33 %>
-                <p class="bg-warning"> Owned by: <%= listing.user.name %>  
+            <% if listing.amazon == nil %>
+                <p class="bg-info"> posted by: <%= listing.user.name %>  
                   <% if (current_user == listing.user) %>
                   <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
                   <% end %>
                 </p>
-              <% end %>
+            <% end %>
+
               </div> <!--- description --->
             
             </div> <!--- colmd3 --->   

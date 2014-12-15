@@ -1,0 +1,8 @@
+<body class="container welcome"> 
+  
+  <div class="searchbox">
+    <div class="form-group">
+      <%= form_tag search_path, :method => :get do %>
+            <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
+            <% end %>
+    </div>

@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def contact
   end
   
-  def user
+  def home
     @user=current_user
     @listings = Listing.where(user: current_user).where(is_active: true).order("created_at DESC")
   end
