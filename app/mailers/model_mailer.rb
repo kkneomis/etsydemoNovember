@@ -1,5 +1,5 @@
 class ModelMailer < ActionMailer::Base
-  default from: "meccashare@gmail.com"
+  default from: "BisonShare"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -11,9 +11,14 @@ class ModelMailer < ActionMailer::Base
     @buyer = buyer
     @seller = seller
     @book= book
-    mail to: email , subject: "You have a new book request on MeccaShare!"
+    mail to: email , subject: "You have a new book request on BisonShare!"
   end
   
+  def welcome_email(user)
+    @user= user
+    
+    mail to: user.email , subject: "You have a new book request on BisonShare!"
+  end
 
   
 end

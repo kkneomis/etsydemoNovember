@@ -3,7 +3,12 @@ body.home {
 background: {
       image: url(https://www.dropbox.com/s/wuqv2qcm2y0nk90/iG8XLtvllAb53.jpg?dl=0&raw=1);
 }
+
   
+}
+
+.lead{
+    align: center;
 }
 
 .about{
@@ -83,9 +88,8 @@ body{
   background-size: cover;
   
   height: 100%;
-  background-color: #060;
+  background-color: white;
   color: #fff;
-  text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
   
 }
