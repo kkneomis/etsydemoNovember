@@ -18,7 +18,7 @@
             <div class="col-md-2">
               <div class="pic"> 
                 <% if (listing.amazon == true)%>
-                  <%= link_to image_tag(listing.picurl), listing.link %>
+                  <%= link_to image_tag(listing.picurl), listing.link+"?tag=bisonshare-20" %>
                 <% else %>
                   <%= link_to image_tag(listing.image.url(:thumb)), listing %>
                 <% end %>
@@ -39,7 +39,7 @@
                 <%end %>
                 <% if listing.amazon == true %>
                 <div class="form-group">
-                      <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
+                  <%= link_to "Buy on Amazon", listing.link+"?tag=bisonshare-20", class: "btn btn-success" %>
                 <%end %>
                 
               <% if listing.amazon == nil %>
