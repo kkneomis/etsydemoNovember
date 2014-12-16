@@ -22,7 +22,7 @@
 
  <%= link_to 'Back', listings_path, class:"btn btn-link" %>    
     <br>
- <% if @listing.amazon == false %>  
+ <% if @listing.amazon == nil %>  
     <% if current_user != @listing.user %>
      <div class="center">
        <%= link_to "Request this book", new_listing_order_path(@listing), class: "btn btn-success" %>

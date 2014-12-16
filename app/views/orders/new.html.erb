@@ -2,17 +2,23 @@
 
 <div class="row">
   <div class="col-md-3"><%= image_tag @listing.image_url(:thumb) %></div>
-  <div class="bg-info">
-    <h3 class="bg-primary">Title: <%= @listing.name %></h3>
+ <div class="col-md-9">
+    <h3 class="bg-primary"> <%= @listing.name %></h3>
       <p><strong>Author:</strong> <%= @listing.author %></p>
       <p><strong>Price:</strong> <%= number_to_currency(@listing.price) %></p>
       <p><strong>Condition:</strong><%= @listing.condition %></p>
       <p><strong>Course:</strong><%= @listing.course %></p>
-      <p class="bg-warning">Owned by:<%= @listing.user.name %></p>
-    </div>
+      <p>Owned by:<%= @listing.user.name %></p>
+  </div>
 <br>
-    
-<h3> Send a message to <%= @listing.user.name %> to let him/her know that you would like to purchase this book </h3>
+
+<div class="container">
+  <h3> Send a message to <%= @listing.user.name %> to let him/her know that you would like to purchase this book </h3>
+  </div>
+
+  
+  <div class="alert alert-warning" role="alert">  <p> <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>Be sure to include a phone number or email address where <%= @listing.user.name %> can contact you <p></div>
+
 <%= render 'form' %>
 
   

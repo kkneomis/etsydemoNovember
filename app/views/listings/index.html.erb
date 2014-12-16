@@ -7,12 +7,15 @@
 <% end %>
 
 <div class="center">
+     <div class="row">
+   <div class="col-md-10">
     <div class="form-group">
       <%= form_tag search_path, :method => :get do %>
             <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
             <% end %>
+       </div>
     </div>
-    
+ </div>  
   
 <div class="center">
     <div class="page-header">

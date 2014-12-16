@@ -1,14 +1,26 @@
-<body class="container welcome"> 
+<body class="home">
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <div class="masthead clearfix">
+        <div class="inner">
 
 
-  
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
- <div class="center"> 
-  <div class="searchbox">
-    <div class="form-group">
-      <%= form_tag search_path, :method => :get do %>
-      <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search here for your textbooks" %>
-            <% end %>
+
+      <div class="inner cover">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h1 class="cover-heading">BisonShare</h1>
+
+        <p class="lead">Books sold to and by Howard University students.</p>
+
+        <p class="lead"><a class="btn btn-lg btn-info" href="/listings#index">List or purchase a book!</a></p>
+      </div>
+
+      <div class="mastfoot">
+        <div class="inner">
+          <!-- Validation -->
+        </div>
+      </div>
     </div>
-    
-   </div>
+</div>
+
