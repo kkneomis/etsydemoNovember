@@ -33,7 +33,7 @@
                 <p> <%= listing.course %></p>
                
                 <% if listing.amazon == true %>
-                     <p><%= listing.aprice %> 
+                     <p><%= number_to_currency(listing.aprice) %> 
                 <%else %>
                   <p> <%= number_to_currency(listing.price) %></p>
                 <%end %>

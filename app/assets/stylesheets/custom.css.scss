@@ -1,3 +1,12 @@
+.navbar-login
+{
+    width: 150px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+.col-lg-8 p:hover{
+  color:black;
+}
 
 body{
  background-color: #B7DBFF; 
@@ -11,18 +20,7 @@ body{
 }
 
   .jumbotron {
-    background-color: #81D1F6;
-    h1{
-      color: white;
-    }
-}
-
-.navbar-default .navbar-brand{
-  font-family: Sans-serif, georgia, serif;
-  font-weight: 400;
-  color: #1A1160;
-  font-size: 40px;
-
+    background-color: white;
 }
 
 .navbar-default .navbar-nav >li >a {
@@ -31,17 +29,10 @@ body{
   font-weight: bold;
   color: #1A1160;
 }
-
-
-
-.navbar-brand {
-  font-family: guardian-egyptt, georgia, serif;
-  font-weight: 300;
+.navbar-nav >li:hover{
+  background-color:#DDDDDD;
 }
-  
-.navbar-right{
-  color: #1A1160;
-}
+ 
 .center {
  text-align: center;
 }
@@ -62,7 +53,6 @@ body{
 }
 
  .jumbotron {
-      width:1000px;
   h1 {
       font-family: guardian-egyptt, georgia, serif;
       color: Black;
@@ -79,8 +69,6 @@ body{
   font-family: guardian-egyptt, georgia, serif;
 }
 
-.navbar body { padding-bottom: 30px; }
-
 .description {
        font-family: guardian-egyptt, georgia, serif;
       color: black;
@@ -95,12 +83,8 @@ body{
 .btn-success:visited {
     color: white;
 }
-.navbar:hover {
-  color: black;
-}
-
-.navbar-nav li:hover {
-  background-color: black;
+.btn-danger:visited {
+    color: white;
 }
 
 
