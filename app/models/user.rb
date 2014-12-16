@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   has_many :listings, dependent: :destroy
   has_many :sales, class_name: "Order", foreign_key: "seller_id"
   has_many :purchases, class_name: "Order", foreign_key: "buyer_id"
-
+  validates :terms_of_service, acceptance: true
   
 end

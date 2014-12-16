@@ -10,5 +10,11 @@ class PagesController < ApplicationController
     @listings = Listing.where(user: current_user).where(is_active: true).order("created_at DESC")
   end
   
+  def terms
+  end
+  
+  def privacy
+  end
+  
   
 end

@@ -18,7 +18,7 @@
             <div class="col-md-2">
               <div class="pic"> 
                 <% if (listing.amazon == true)%>
-                  <%= link_to image_tag(listing.picurl), listing %>
+                  <%= link_to image_tag(listing.picurl), listing.link %>
                 <% else %>
                   <%= link_to image_tag(listing.image.url(:thumb)), listing %>
                 <% end %>

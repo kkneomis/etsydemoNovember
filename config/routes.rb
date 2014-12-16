@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get 'purchases' => 'orders#purchases'
   get 'search', to: 'search#search'
   get 'archive' => 'listings#index'
+  get 'pages/terms'
+  get 'pages/privacy'
   root 'pages#home'
   
 
