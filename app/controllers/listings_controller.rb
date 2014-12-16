@@ -40,6 +40,9 @@ def seller
     @listing = Listing.new(listing_params)
     @listing.is_active = true
     @listing.user_id = current_user.id
+    if(@listing.amazon==nil)
+      @listing.amazon= false
+    end
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
