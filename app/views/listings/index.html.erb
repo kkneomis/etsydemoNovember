@@ -29,33 +29,34 @@
         <% @listings.each_slice(4) do |list_group| %>
             <div class="row">
               <% list_group.each do |listing| %>
-              
-            <div class="col-md-3">
-              
-              <div class="pic">
-                  <%= link_to image_tag(listing.image.url(:thumb)), listing %>
-              </div>
-            
-              <div class="description"> 
-                <h4> <%= listing.name.upcase %></h4>
-                <p> <%= listing.course %></p>
-                  <p> <%= number_to_currency(listing.price) %></p>
-                <div class="form-group">
-                  <% if listing.amazon == true %>
-                      <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
-                  <% end %>
-                </div>
-            <% if listing.amazon == nil %>
-                <p class="bg-info"> posted by: <%= listing.user.name %>  
-                  <% if (current_user == listing.user) %>
-                  <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
-                  <% end %>
-                </p>
-            <% end %>
+                
+                  <div class="col-md-3">
+       
+                    <div class="pic">
+                        <%= link_to image_tag(listing.image.url(:thumb)), listing %>
+                    </div>
 
-              </div> <!--- description --->
-            
-            </div> <!--- colmd3 --->   
+                    <div class="description"> 
+                      <h4> <%= listing.name.upcase %></h4>
+                      <p> <%= listing.course %></p>
+                        <p> <%= number_to_currency(listing.price) %></p>
+                      <div class="form-group">
+                        <% if listing.amazon == true %>
+                            <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
+                        <% end %>
+                      </div>
+                  <% if listing.amazon == nil %>
+                      <p class="bg-info"> posted by: <%= listing.user.name %>  
+                        <% if (current_user == listing.user) %>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+                        <% end %>
+                      </p>
+                  <% end %>
+
+                    </div> <!--- description --->
+                   
+                  </div> <!--- colmd3 ---> 
+                
              <% end %>
         </div> <!--- row class --->
         <% end %>
