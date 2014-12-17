@@ -10,53 +10,44 @@
             <% end %>
     </div>
 
-     
-        <% @listings.each do |listing| %>
-          <div class="row">
-            
-            <div class="col-md-2">
-              <div class="pic"> 
-                <% if (listing.amazon == true)%>
-                  <%= link_to image_tag(listing.picurl), listing.link+"?tag=bisonshare-20" %>
-                <% else %>
-                  <%= link_to image_tag(listing.image.url(:thumb)), listing %>
-                <% end %>
-              </div><!--- pic ---> 
-            </div> <!--- colmd2 ---> 
-            
-            
-             <div class="col-md-6">
-             <div class ="center">  
-             <div class="sdescription"> 
-                <h3> <%= listing.name %></h3>
-                <hp> by: <%= listing.author %></hp>
-                <p> <%= listing.course %></p>
-               
-                <% if listing.amazon == true %>
-               <p><%= number_to_currency(listing.aprice) %> </p>
-                <%else %>
-                  <p> <%= number_to_currency(listing.price) %></p>
-                <%end %>
-                <% if listing.amazon == true %>
-                <div class="form-group">
-                  <%= link_to "Buy on Amazon", listing.link+"?tag=bisonshare-20", class: "btn btn-success" %>
-                <%end %>
-                
-              <% if listing.amazon == nil %>
-                <p> Owned by: <%= listing.user.name %>  
-                  <% if (current_user == listing.user) %>
-                  <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+
+ <% @listings.each do |listing| %>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="row">    
+                <figure>
+                      <div class="col-md-2">
+                       <% if listing.amazon == true %>
+                          <%= link_to image_tag(listing.picurl), listing.link+"?tag=bisonshare-20" %>
+                        <% else %>
+                          <%= link_to image_tag(listing.image.url(:thumb)), listing %>
+                        <% end %>
+                       </div>
+              <div class="col-md-8">
+                  <ul class="list-group">
+                    <li class="list-group-item"><%= listing.name %> By: <%= listing.author %></li>
+                    <li class="list-group-item"><%= number_to_currency(listing.price) %></li>
+                    <li class="list-group-item"> 
+                    
+                    <% if listing.amazon == true %>
+                      <div class="form-group">
+                        <%= link_to "Buy on Amazon", listing.link+"?tag=bisonshare-20", class: "btn btn-success" %>
+                     <%else %>
+                        <p>  <%= link_to "Request this book", new_listing_order_path(listing), class: "btn btn-success" %> from <%= listing.user.name %> </p> 
+                      </div> 
                   <% end %>
-                </p>
-              <% end %>
-               </div> <!---- form group --->
-              </div> <!--- description --->
-               </div>
-          </div> <!--- colmd6 --->
-          
-  </div> <!--- row ---> 
-  <br>
+                    </li>
+                    
+                  </ul>
+           </div>
+                         </figure>
+              </div>
+          </div>
         <% end %>
+ 
+
+     
+       
         
 
  
