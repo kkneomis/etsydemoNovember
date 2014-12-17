@@ -1,3 +1,8 @@
+.page-header{
+  h1{
+    color: #5409FF;
+  }
+}
 .contact {
   p{
     font-size: 16px;
@@ -45,20 +50,6 @@ body{
  text-align: center;
 }
 
-.index .jumbotron {
-  background-image: url("https://www.dropbox.com/s/uutdcyknbijbjgx/meccashare.png?dl=0&raw=1");
-  h1 {
-      font-family: guardian-egyptt, georgia, serif;
-      color: black;
-      text-align: center;
-  }
-   h2 {
-      font-family: guardian-egyptt, georgia, serif;
-      color: black;
-      text-align: right;
-     font-size: 27px;
-  }
-}
 
  .jumbotron {
   h1 {
@@ -79,9 +70,9 @@ body{
 
 .description {
        font-family: guardian-egyptt, georgia, serif;
-      color: black;
+      color: #5409FF;
       h4{
-        color: blue;
+        color: #5409FF;
       }
 }
  
@@ -94,7 +85,9 @@ body{
 .btn-danger:visited {
     color: white;
 }
-
+.btn-primary{
+  background-color: #D1D1D1;
+}
 
 .pic {
   -webkit-transition: all .5s ease;

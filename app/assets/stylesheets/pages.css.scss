@@ -1,3 +1,7 @@
+body{
+   background-color:blue;
+}
+
 body.home {
 /*css for full size background image*/
 background: url(https://www.dropbox.com/s/wuqv2qcm2y0nk90/iG8XLtvllAb53.jpg?dl=0&raw=1) no-repeat center center fixed;
@@ -29,7 +33,6 @@ background-size: cover;
   }
   p{
     font-family: guardian-egyptt, georgia, serif;
-    background-color: white;
     font-size: 22px;
     color:#1A1160;
     line-height: 2em;

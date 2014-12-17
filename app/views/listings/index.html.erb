@@ -1,19 +1,13 @@
-<% if @listings.current_page == 1 %> 
-   <div class="index">
-    <div class="jumbotron">
-      <br><br><br> <br><br><br> <br><br><br>
-      </div>
-</div>
-<% end %>
+
 
 <div class="center">
      <div class="row">
-   <div class="col-md-10">
+
     <div class="form-group">
       <%= form_tag search_path, :method => :get do %>
             <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
             <% end %>
-       </div>
+
     </div>
  </div>  
   
@@ -45,8 +39,8 @@
                             <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
                         <% end %>
                       </div>
-                  <% if listing.amazon == nil %>
-                      <p class="bg-info"> posted by: <%= listing.user.name %>  
+                      <% if listing.amazon == false %>
+                      <p> posted by: <%= listing.user.name %>  
                         <% if (current_user == listing.user) %>
                         <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
                         <% end %>
@@ -69,8 +63,6 @@
     <div class= "form-group">
          <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
       <br>
-        <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary btn-lg" %>
-
     </div>
 </div>
 

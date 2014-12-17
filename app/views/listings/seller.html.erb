@@ -11,7 +11,7 @@
    <% @listings.each do |listing| %>
       <tr>
         <td>
-          <% if listing.user_id == 7 %>
+          <% if listing.amazon == true %>
                   <%= link_to image_tag(listing.picurl), listing %>
                 <% else %>
                   <%= link_to image_tag(listing.image.url(:thumb)), listing %>

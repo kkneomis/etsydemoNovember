@@ -13,9 +13,7 @@ def seller
   # GET /listings.json
   def index
     if params[:q].blank?
-      @listings=Listing.where(is_active: true).where(amazon: nil).order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
-    else
-      @listings = Listing.search(params[:q]).records.where(is_active: true).where(amazon: nil).order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
+      @listings=Listing.where(is_active: true).where.not(amazon: true).order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
     end
    
    end
@@ -40,7 +38,7 @@ def seller
     @listing = Listing.new(listing_params)
     @listing.is_active = true
     @listing.user_id = current_user.id
-    if(@listing.amazon==nil)
+    if(@listing.amazon!=true)
       @listing.amazon= false
     end
     respond_to do |format|

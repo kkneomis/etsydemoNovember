@@ -1,7 +1,6 @@
 <div class="center">
     <div class="page-header">
       <h1>Search results for: "<%= params[:q] %>" </h1>
-      <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
     </div>
 </div>
 <div class="center">
@@ -27,13 +26,14 @@
             
             
              <div class="col-md-6">
-             <div class="description"> 
+             <div class ="center">  
+             <div class="sdescription"> 
                 <h3> <%= listing.name %></h3>
                 <hp> by: <%= listing.author %></hp>
                 <p> <%= listing.course %></p>
                
                 <% if listing.amazon == true %>
-                     <p><%= number_to_currency(listing.aprice) %> 
+               <p><%= number_to_currency(listing.aprice) %> </p>
                 <%else %>
                   <p> <%= number_to_currency(listing.price) %></p>
                 <%end %>
@@ -51,7 +51,8 @@
               <% end %>
                </div> <!---- form group --->
               </div> <!--- description --->
-          </div> <!--- colmd1 --->
+               </div>
+          </div> <!--- colmd6 --->
           
   </div> <!--- row ---> 
   <br>
