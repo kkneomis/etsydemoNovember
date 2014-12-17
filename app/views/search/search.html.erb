@@ -33,7 +33,13 @@
                       <div class="form-group">
                         <%= link_to "Buy on Amazon", listing.link+"?tag=bisonshare-20", class: "btn btn-success" %>
                      <%else %>
-                        <p>  <%= link_to "Request this book", new_listing_order_path(listing), class: "btn btn-success" %> from <%= listing.user.name %> </p> 
+                        <p>  
+                          <% if listing.user != current_user %> 
+                          <%= link_to "Request this book", new_listing_order_path(listing), class: "btn btn-success" %> from <%= listing.user.name %>
+                          <% else %>
+                          <%= link_to "View my book", listing, class: "btn btn-primary" %>
+                          <% end %>
+                        </p> 
                       </div> 
                   <% end %>
                     </li>
