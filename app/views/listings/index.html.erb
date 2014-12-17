@@ -13,7 +13,7 @@
   
 <div class="center">
     <div class="page-header">
-      <h1>Books listings!  <br> <small>Click on a book for more details or <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %></small></h1>
+      <h1>Books being shared  <br> <small>Click on a book for more details or <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %></small></h1>
       <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
     </div>
 </div>
@@ -28,26 +28,12 @@
                 
                   <div class="col-md-3">
        
-                    <div class="pic">
-                        <%= link_to image_tag(listing.image.url(:thumb)), listing %>
-                    </div>
+    <div class="pic"><%=link_to image_tag(listing.image.url(:thumb)), listing %></div>
 
                     <div class="description"> 
                       <h4> <%= listing.name.upcase %></h4>
-                      <p> <%= listing.course %></p>
+                      <hp> by: <%= listing.author %></hp>
                         <p> <%= number_to_currency(listing.price) %></p>
-                      <div class="form-group">
-                        <% if listing.amazon == true %>
-                            <%= link_to "Buy on Amazon", listing.link, class: "btn btn-success" %>
-                        <% end %>
-                      </div>
-                      <% if listing.amazon == false %>
-                      <p> posted by: <%= listing.user.name %>  
-                        <% if (current_user == listing.user) %>
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
-                        <% end %>
-                      </p>
-                  <% end %>
 
                     </div> <!--- description --->
                    

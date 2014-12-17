@@ -1,8 +1,21 @@
+
+
 .page-header{
   h1{
-    color: #5409FF;
+    color: #29264E;
+    font-family: guardian-egyptt, georgia, serif;
   }
 }
+
+.description {
+       font-family: guardian-egyptt, georgia, serif;
+      color: #29264E;
+      h4{
+        color: #29264E;
+      }
+}
+
+
 .contact {
   p{
     font-size: 16px;
@@ -68,13 +81,7 @@ body{
   font-family: guardian-egyptt, georgia, serif;
 }
 
-.description {
-       font-family: guardian-egyptt, georgia, serif;
-      color: #5409FF;
-      h4{
-        color: #5409FF;
-      }
-}
+
  
 .btn-primary:visited {
     color: white;
@@ -89,17 +96,20 @@ body{
   background-color: #D1D1D1;
 }
 
-.pic {
-  -webkit-transition: all .5s ease;
-     -moz-transition: all .5s ease;
-       -o-transition: all .5s ease;
-      -ms-transition: all .5s ease;
-          transition: all .5s ease;
+ .pic img{
+   padding: 5px; border: solid 1px #EFEFEF;
+   -moz-box-shadow: 1px 1px 5px #999;
+   -webkit-box-shadow: 1px 1px 5px #999; box-shadow: 1px 1px 5px #999;
+ }
+
+.pic:hover img{
+   transform: scale(1.1);
+  transition: ease 1.5;
 }
- 
-.pic:hover {
-  -webkit-filter: grayscale(75%);
+.pic:hover a{
+  background-color: white;
 }
+
 
 .description{
   p {
