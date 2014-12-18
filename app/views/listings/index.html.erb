@@ -1,24 +1,23 @@
 
 
 <div class="center">
-     <div class="row">
 
-    <div class="form-group">
-      <%= form_tag search_path, :method => :get do %>
-            <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
-            <% end %>
-
-    </div>
- </div>  
-  
 <div class="center">
     <div class="page-header">
-      <h1>Books being shared  <br> <small>Click on a book for more details or <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %></small></h1>
+      <h1>Books Listings <br> <small>Click on a book for more details or <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %></small></h1>
+       <div class="col-m-6">
+         <div class="form-inline">
+      <%= form_tag search_path, :method => :get do %>
+           <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search for your books" %>
+            <% end %>
+   </div>  
+ </div>   
+      
       <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
     </div>
 </div>
-
   
+ 
   
 <div class="center"> 
      

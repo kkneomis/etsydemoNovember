@@ -14,9 +14,10 @@
  <% @listings.each do |listing| %>
     <div class="row">
         <div class="panel panel-default">
+          <div class="col-md-2">
             <div class="row">    
                 <figure>
-                      <div class="col-md-2">
+                      
                       <div class="pic">
                        <% if listing.amazon == true %>
                           <%= link_to image_tag(listing.picurl), listing.link+"?tag=bisonshare-20" %>
@@ -25,6 +26,7 @@
                         <% end %>
                        </div>
                         </div>
+                  </div>
               <div class="col-md-8">
                   <ul class="list-group">
                     <li class="list-group-item"><%= listing.name %> By: <%= listing.author %></li>
@@ -37,7 +39,7 @@
                      <%else %>
                         <p>  
                           <% if listing.user != current_user %> 
-                          <%= link_to "Request this book", new_listing_order_path(listing), class: "btn btn-success" %> from <%= listing.user.name %>
+                          <%= link_to "Request this book", new_listing_order_path(listing), class: "btn btn-success" %> 
                           <% else %>
                           <%= link_to "View my book", listing, class: "btn btn-primary" %>
                           <% end %>
@@ -50,7 +52,7 @@
            </div>
                          </figure>
               </div>
-          </div>
+          
         <% end %>
  
 
