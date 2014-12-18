@@ -16,5 +16,7 @@ class PagesController < ApplicationController
   def privacy
   end
   
+  def getting_started
+  end
   
 end

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'archive' => 'listings#index'
   get 'pages/terms'
   get 'pages/privacy'
+  get 'pages/getting_started'
   root 'pages#home'
   
 

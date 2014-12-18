@@ -104,7 +104,11 @@ body{
 .pic:hover a{
   background-color: white;
 }
-
+ .showpic img{
+   padding: 5px; border: solid 1px #EFEFEF;
+   -moz-box-shadow: 1px 1px 5px #999;
+   -webkit-box-shadow: 1px 1px 5px #999; box-shadow: 1px 1px 5px #999;
+ }
 
 .description{
   p {
