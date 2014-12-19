@@ -7,7 +7,7 @@
       <div class="jumbotron"> 
     
        <div class="center">
-        <h1>Bison Books </h1>
+        <h1>BISON BOOKS </h1>
        </div>
        <div class="col-m-6">
         
@@ -46,14 +46,7 @@
         <% end %>
     </div>      
 
-
-  
-<div class="center"> 
-    <div class= "form-group">
-         <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
-      <br>
+    <div class="center">       
+      <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
+      <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %>
     </div>
-</div>
-
-
- 
