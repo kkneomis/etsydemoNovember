@@ -1,9 +1,10 @@
 .jumbotron {
   background: url(https://www.dropbox.com/s/kvbxgigvooelpzl/library.jpg?dl=0&raw=1);
   
-  h1{
+  .center h1{
     color:white;
-   font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+     font-family: 'Ubuntu', sans-serif;
     
   }
    small{
@@ -26,6 +27,7 @@ background-size: cover;
 
 .lead{
     align: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .about{
@@ -47,10 +49,6 @@ background-size: cover;
   }
 }
 
-
-.searchbox .form-group{
-   	transform: translateY(-50%);
-}
 
 
 .inner{

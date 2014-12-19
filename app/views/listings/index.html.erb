@@ -1,21 +1,17 @@
 
-
-
-
-
     <div class="page-header">
       <div class="jumbotron"> 
     
        <div class="center">
         <h1>BISON BOOKS </h1>
        </div>
+  </div>       
        <div class="col-m-6">
-        
       <%= form_tag search_path, :method => :get do %>
            <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search for your books" %>
             <% end %>
    </div>    
-</div>       
+      
       <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
     </div>
 
@@ -34,7 +30,6 @@
 
                     <div class="description"> 
                       <h4> <%= listing.name.upcase %></h4>
-                      <hp> by: <%= listing.author %></hp>
                         <p> <%= number_to_currency(listing.price) %></p>
 
                     </div> <!--- description --->

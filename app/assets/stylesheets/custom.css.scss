@@ -2,19 +2,23 @@
   h1{
     
     color: #29264E;
-    font-family: guardian-egyptt, georgia, serif;
+    font-family:  'Ubuntu', sans-serif;
   }
 }
 
 .description {
-       font-family: guardian-egyptt, georgia, serif;
+      font-family: 'Ubuntu', sans-serif;
       color: #29264E;
-      h4{
-        color: #29264E;
-      }
+      line-height: .05em;
+      
 }
 
-
+strong{
+  font-family: 'Ubuntu', sans-serif;
+}
+.col-md-6 {
+    font-family: 'Ubuntu', sans-serif;
+}
 .contact {
   p{
     font-size: 16px;
@@ -42,10 +46,13 @@ body{
 }
 
 .navbar-default .navbar-nav >li >a {
-  font-family: Sans-serif, Times, serif;
+  display: block;
+  color: black;
+  font-size: 14px;
+  text-transform: uppercase;
   font-weight: bold;
-  font-size: 13px;
-  color: #1A1160;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 0.05em;
 }
 
 
