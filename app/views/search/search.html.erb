@@ -9,55 +9,26 @@
             <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search" %>
             <% end %>
     </div>
+</div>
 
+    <table class="table">  
+      <tr>
+          <% @listings.each do |listing| %>
+            <td>
+              <% if listing.amazon == true %>
+                      <%= link_to image_tag(listing.picurl), listing %>
+                    <% else %>
+                      <%= link_to image_tag(listing.image.url(:thumb)), listing %>
+                    <% end %>
+            </td>  
 
- <% @listings.each do |listing| %>
-    <div class="row">
-        <div class="panel panel-default">
-          <div class="col-md-2">
-            <div class="row">    
-                <figure>
-                      
-                      <div class="pic">
-                       <% if listing.amazon == true %>
-                          <%= link_to image_tag(listing.picurl), listing.link+"?tag=bisonshare-20" %>
-                        <% else %>
-                          <%= link_to image_tag(listing.image.url(:thumb)), listing %>
-                        <% end %>
-                       </div>
-                        </div>
-                  </div>
-              <div class="col-md-8">
-                  <ul class="list-group">
-                    <li class="list-group-item"><%= listing.name %> By: <%= listing.author %></li>
-                    <li class="list-group-item"><%= number_to_currency(listing.price) %></li>
-                    <li class="list-group-item"> 
-                    
-                    <% if listing.amazon == true %>
-                      <div class="form-group">
-                        <%= link_to "Buy on Amazon", listing.link+"?tag=bisonshare-20", class: "btn btn-success" %>
-                     <%else %>
-                        <p>  
-                          <% if listing.user != current_user %> 
-                          <%= link_to "Request this book", new_listing_order_path(listing), class: "btn btn-success" %> 
-                          <% else %>
-                          <%= link_to "View my book", listing, class: "btn btn-primary" %>
-                          <% end %>
-                        </p> 
-                      </div> 
-                  <% end %>
-                    </li>
-                    
-                  </ul>
-           </div>
-                         </figure>
-              </div>
-          
-        <% end %>
- 
+        <td><h4><%= listing.name.upcase %></h4><br>
+          <p>by: <%= listing.author %></p> <br>
+          <p><%= number_to_currency(listing.price) %></p>
+        </td> 
 
-     
-       
+      </tr><%end%>
+      <table>       
         
 
  
