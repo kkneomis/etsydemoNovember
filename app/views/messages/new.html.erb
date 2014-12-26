@@ -1,8 +1,40 @@
+
+
 <div class="col-md-6">  
   <div class="center">
     <h1>Your feedback is critical to our sucess <br> <small>Use this form to report any errors you find or simply tell us how you feel about BisonShare.</small> </h1>
   </div>
 </div>
+
+
 <%= render 'form' %>
 
-<%= link_to 'Back', messages_path %>
+<%= link_to 'Back', listings_path %>
+
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <div class="col-md-4">  
+     <a href="https://twitter.com/BisonsShare" class="twitter-follow-button" data-show-count="false">Follow us @BisonsShare</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+      <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+    </div>
+    <div class="col-md-4">  
+      <div class="fb-like" data-href="https://www.facebook.com/bisonshare" data-width="200px" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+ <br/>
+    </div>
+    
+ <div class="col-md-12">
+        <h4>BisonShare was developed by <%= link_to  "Simeon Kakpovi", pages_contact_path %>. Believe you can and you're halfway there.</h4>
+    </div>
+ </div>
+</nav>

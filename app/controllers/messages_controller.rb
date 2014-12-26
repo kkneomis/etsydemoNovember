@@ -24,7 +24,8 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.save
     ModelMailer.ad_mail(@message.email, @message.content, @message.name).deliver
-    respond_with(@message)
+    flash[:notice] = 'Your message was received. Thank you for your feedback!' if @message.save
+    redirect_to contact_path
   end
 
   def update
