@@ -1,0 +1,48 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<!-- contact form -->
+			<section class="pb-medium">
+				<div id="map-wrapper" class="mb-medium satellite"></div>
+				<div class="container">
+					<div class="row pb40">
+						<form method="post" action="js-plugin/neko-contact-ajax-plugin/php/form-handler.php" id="contactfrm" role="form">
+							<div class="col-sm-4"> 
+								<div class="form-group">
+									<label for="name">Name</label>
+                  <%= f.text_field :name, placeholder:"Enter name", class:"form-control", title: "Please enter your name (at least 2 characters)", required: "true" %>
+								</div>
+								<div class="form-group">
+									<label for="email">Email</label>
+                  <%= f.text_field :email, placeholder:"Enter email", class:"form-control", title:"Please enter a valid email address", required: "true" %>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="comments">Comments</label>
+                  <%= f.text_area :content, placeholder:"Enter your message…", class:"form-control", title:"Please enter a valid email address", required: "true", rows:"5" %>
+								</div>
+							</div> 
+							<div class="col-md-8 col-md-offset-4">
+								<button name="submit" type="submit" class="btn btn-primary btn-lg " id="submit"> Submit</button>
+								<div class="result"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<!-- / contact form -->
+
+
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213033858) do
+ActiveRecord::Schema.define(version: 20141226012824) do
 
   create_table "listings", force: true do |t|
     t.string   "name"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20141213033858) do
     t.string   "link"
     t.boolean  "is_active"
     t.boolean  "amazon"
+  end
+
+  create_table "messages", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "content"
+    t.string   "bname"
+    t.string   "bcondition"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "orders", force: true do |t|

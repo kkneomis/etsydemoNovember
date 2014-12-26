@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :messages
+
   get 'products/index'
 
   get 'products/import'
-
+  
   devise_for :users
   devise_for :views
   resources :listings
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
   get 'home' => 'pages#home'
+  get 'contact' => 'messages#new'
   get 'seller' => 'listings#seller'
   get 'sales' => 'orders#sales'
   get 'purchases' => 'orders#purchases'

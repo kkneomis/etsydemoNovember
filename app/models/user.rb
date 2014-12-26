@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :listings, dependent: :destroy
   has_many :sales, class_name: "Order", foreign_key: "seller_id"
   has_many :purchases, class_name: "Order", foreign_key: "buyer_id"
-  validates :terms_of_service, acceptance: true
   
+  after_create :send_welcome_mail
+  
+  def send_welcome_mail
+    ModelMailer.welcome_email(self.email, self.name).deliver
+  end
 end

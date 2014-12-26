@@ -14,11 +14,15 @@ class ModelMailer < ActionMailer::Base
     mail to: email , subject: "You have a new book request on BisonShare!"
   end
   
-  def welcome_email(user)
-    @user= user
-    
-    mail to: user.email , subject: "You have a new book request on BisonShare!"
+  def welcome_email(email, name)
+    @name= name
+    mail to: email , subject: "Welcome to BisonShare!"
   end
 
-  
+  def ad_mail(email, message, name)
+    @message= message
+    @name =name
+    @email=email 
+    mail to: "bisonshare@gmail.com" , subject: "New Message"
+  end
 end
