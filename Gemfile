@@ -13,14 +13,15 @@ gem 'carrierwave'
 gem 'carrierwave-dropbox'
 gem 'twilio-ruby'
 gem "figaro"
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
+gem 'elasticsearch-model', :require => false
+gem 'elasticsearch-rails', :require => false
 gem 'jquery-turbolinks'
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
-gem 'iconv'
-gem 'smarter_csv'
-gem 'owlcarousel-rails'
+gem 'iconv', :require => false
+gem 'smarter_csv', :require => false
+gem 'owlcarousel-rails', :require => false
+gem 'gem_bench', :require => false, :group => :development
 
 group :production do
 
