@@ -11,11 +11,11 @@ gem "mini_magick"
 gem 'devise' 
 gem 'carrierwave' , :require => false
 gem 'carrierwave-dropbox'
-gem 'twilio-ruby',:require => false
+gem 'twilio-ruby', :require => false
 gem "figaro"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'jquery-turbolinks'
+gem 'jquery-turbolinks'  , :require => false
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 gem 'iconv', :require => false
