@@ -43,3 +43,5 @@ gem 'sdoc', require: false
 
 end
 
+
+ruby '2.0.0'  
