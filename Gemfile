@@ -15,7 +15,7 @@ gem 'twilio-ruby', :require => false
 gem "figaro"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'jquery-turbolinks'  , :require => false
+gem 'jquery-turbolinks'  
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 gem 'iconv', :require => false
@@ -44,4 +44,3 @@ gem 'sdoc', require: false
 end
 
 
-ruby '2.0.0'  
