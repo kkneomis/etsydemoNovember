@@ -13,7 +13,7 @@ gem 'carrierwave' , :require => false
 gem 'carrierwave-dropbox'
 gem 'twilio-ruby'
 gem "figaro"
-gem 'elasticsearch-model'e
+gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'jquery-turbolinks'
 gem 'will_paginate', '~> 3.0.5'
