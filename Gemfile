@@ -8,7 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem "mini_magick"
-gem 'devise' :require => false
+gem 'devise' 
 gem 'carrierwave' , :require => false
 gem 'carrierwave-dropbox'
 gem 'twilio-ruby'
