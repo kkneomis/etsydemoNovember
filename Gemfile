@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 1.2'
 gem "mini_magick" , :require => false
 gem 'devise' 
 gem 'carrierwave' , :require => false
-gem 'carrierwave-dropbox', :require => false
+gem 'carrierwave-dropbox'
 gem 'twilio-ruby',:require => false
 gem "figaro"
 gem 'elasticsearch-model'
