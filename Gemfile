@@ -11,7 +11,7 @@ gem "mini_magick"
 gem 'devise' 
 gem 'carrierwave' , :require => false
 gem 'carrierwave-dropbox'
-gem 'twilio-ruby'
+#gem 'twilio-ruby'
 gem "figaro"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
@@ -19,9 +19,9 @@ gem 'jquery-turbolinks'
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 gem 'iconv', :require => false
-gem 'smarter_csv', :require => false
-gem 'owlcarousel-rails', :require => false
-gem 'gem_bench', :require => false, :group => :development
+#gem 'smarter_csv', :require => false
+#gem 'owlcarousel-rails', :require => false
+#gem 'gem_bench', :require => false, :group => :development
 
 group :production do
 
