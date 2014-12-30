@@ -7,7 +7,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem "mini_magick" , :require => false
+gem "mini_magick"
 gem 'devise' 
 gem 'carrierwave' , :require => false
 gem 'carrierwave-dropbox'
