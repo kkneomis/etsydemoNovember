@@ -13,7 +13,7 @@ def seller
   # GET /listings.json
   def index
     if params[:q].blank?
-      @listings=Listing.where(is_active: true).where.not(amazon: true).order("created_at DESC").paginate(:page => params[:page], :per_page => 16)
+      @listings=Listing.all.paginate(:page => params[:page], :per_page => 16)
     end
    
    end
