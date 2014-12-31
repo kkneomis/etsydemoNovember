@@ -16,8 +16,8 @@ gem "figaro"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails', :require => false
 gem 'jquery-turbolinks'  
-gem 'will_paginate', '~> 3.0.5', :require => false
-gem 'will_paginate-bootstrap', :require => false
+gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate-bootstrap'
 gem 'iconv', :require => false
 gem 'smarter_csv', :require => false
 gem 'owlcarousel-rails', :require => false
