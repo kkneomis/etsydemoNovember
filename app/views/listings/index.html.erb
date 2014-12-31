@@ -46,6 +46,6 @@
     </div>      
 
     <div class="center">       
-      <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
-      <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %>
+      <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %> <br/>
+      <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary btn-lg" %>
     </div>

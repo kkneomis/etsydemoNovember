@@ -14,7 +14,7 @@ gem 'carrierwave-dropbox'
 gem 'twilio-ruby', :require => false
 gem "figaro"
 gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
+gem 'elasticsearch-rails', :require => false
 gem 'jquery-turbolinks'  
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
