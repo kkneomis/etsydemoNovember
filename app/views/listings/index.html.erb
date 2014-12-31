@@ -1,29 +1,25 @@
 
     <div class="page-header">
+ 
       <div class="jumbotron"> 
-    
        <div class="center">
         <h1>BISON BOOKS </h1>
        </div>
-  </div>       
+       </div>       
+
        <div class="col-m-6">
       <%= form_tag search_path, :method => :get do %>
            <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search for your books" %>
             <% end %>
    </div>    
-    <div class="center">
-      <div class="form-group">
-        <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %>
-      </div>
-      <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary" %>
-    </div>
+
     </div>
 
   
  
   
 <div class="center"> 
-     
+  <h1> Books Recently Posted </h1> <br/>
         <% @listings.each_slice(4) do |list_group| %>
             <div class="row">
               <% list_group.each do |listing| %>
@@ -46,6 +42,6 @@
     </div>      
 
     <div class="center">       
-      <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %> <br/>
+
       <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary btn-lg" %>
     </div>
