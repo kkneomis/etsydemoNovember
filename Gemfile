@@ -22,7 +22,7 @@ gem 'iconv', :require => false
 gem 'smarter_csv', :require => false
 gem 'owlcarousel-rails', :require => false
 gem 'gem_bench', :require => false, :group => :development
-
+gem 'unicorn'
 group :production do
 
 gem 'pg'
