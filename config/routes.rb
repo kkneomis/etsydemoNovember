@@ -17,9 +17,7 @@ Rails.application.routes.draw do
     collection { post :import }
   end
  
-  resources :products do
-    collection { post :import}
-  end
+ 
   
   get 'pages/about'
   get 'pages/contact'

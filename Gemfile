@@ -23,6 +23,7 @@ gem 'smarter_csv', :require => false
 gem 'owlcarousel-rails', :require => false
 gem 'gem_bench', :require => false, :group => :development
 gem 'unicorn'
+gem 'newrelic_rpm'
 group :production do
 
 gem 'pg'
