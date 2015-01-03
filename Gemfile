@@ -15,10 +15,8 @@ gem "figaro"
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails', :require => false
 gem 'jquery-turbolinks'  
-gem 'will_paginate', '~> 3.0.5'
-gem 'will_paginate-bootstrap'
-
-gem 'gem_bench', :require => false, :group => :development
+#gem 'will_paginate', '~> 3.0.5'
+#gem 'will_paginate-bootstrap'
 gem 'unicorn'
 gem 'newrelic_rpm'
 group :production do
