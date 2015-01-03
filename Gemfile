@@ -17,8 +17,8 @@ gem 'elasticsearch-rails', :require => false
 gem 'jquery-turbolinks'  
 #gem 'will_paginate', '~> 3.0.5'
 #gem 'will_paginate-bootstrap'
-gem 'unicorn'
-gem 'newrelic_rpm'
+#gem 'unicorn'
+#gem 'newrelic_rpm'
 group :production do
 
 gem 'pg'
