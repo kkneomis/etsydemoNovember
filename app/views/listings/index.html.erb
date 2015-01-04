@@ -9,7 +9,7 @@
 
        <div class="col-m-6">
       <%= form_tag search_path, :method => :get do %>
-           <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search for your books", data: { disable_with: "Loading..." }  %>
+           <%= text_field_tag :q, params[:q] , class: "form-control", placeholder: "Search for your books", data: { disable_with: params[:q] }  %>
             <% end %>
    </div>    
 

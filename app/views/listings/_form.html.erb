@@ -14,31 +14,31 @@
 
   <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name, class:"form-control", placeholder:"Enter the book title" %>
+    <%= f.text_field :name, class:"form-control", placeholder:"Enter the book title", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :author %><br>
-    <%= f.text_field :author, class:"form-control", placeholder:"List the author(s) of the book" %>
+    <%= f.text_field :author, class:"form-control", placeholder:"List the author(s) of the book", required: true %>
   </div>
 
 <%= f.label :price %>
 <div class="input-group">
   <span class="input-group-addon">$<br></span>
-  <%= f.text_field :price, class:"form-control", placeholder:"Enter the price of the book" %>
+  <%= f.text_field :price, class:"form-control", placeholder:"Enter the price of the book", required: true %>
 </div>
 
 
   <div class="form-group">
     <%= f.label :condition %><br>
-    <%= f.text_field :condition, class:"form-control", placeholder:"Describe the condition of the book" %>
+    <%= f.text_field :condition, class:"form-control", placeholder:"Describe the condition of the book", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :course %><br>
-    <%= f.text_field :course, class:"form-control", placeholder:"What course is this book used in?" %>
+    <%= f.text_field :course, class:"form-control", placeholder:"What course is this book used in?", required: true %>
   </div>
   <div class="form-group">
     <%= f.label :isbn %><br>
-    <%= f.text_field :isbn, class:"form-control", placeholder:"What is this book's isbn?" %>
+    <%= f.text_field :isbn, class:"form-control", placeholder:"What is this book's isbn?"  %>
   </div>
 
   <div class="form-group">
@@ -46,7 +46,7 @@
     <%= f.file_field :image, class:"form-control" %>
   </div>
   <div class="form-group">
-    <%= f.submit class: "btn btn-primary"%>
+    <%= f.submit class: "btn btn-primary", data: { disable_with: "Loading..." }%>
   </div>
 
 
