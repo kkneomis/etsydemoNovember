@@ -12,7 +12,7 @@ def seller
   # GET /listings
   # GET /listings.json
   def index
-
+    
    
    end
 

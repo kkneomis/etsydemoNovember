@@ -25,4 +25,13 @@ class ModelMailer < ActionMailer::Base
     @email=email 
     mail to: "bisonshare@gmail.com" , subject: "New Message"
   end
+  
+  def value_mail(name, title, condition, email, comment)
+    @name=name
+    @title=title
+    @condition=condition
+    @comment=comment
+    mail to: "bisonshare@gmail.com" , subject: "Esteem Requested"
+  end
+  
 end

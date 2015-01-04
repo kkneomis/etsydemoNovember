@@ -8,6 +8,9 @@ class MessagesController < ApplicationController
     respond_with(@messages)
   end
 
+  def value  
+  end
+  
   def show
     respond_with(@message)
   end

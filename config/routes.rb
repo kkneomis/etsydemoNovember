@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :messages
-
+  resources :esteems
   get 'products/index'
 
   get 'products/import'
@@ -17,8 +17,7 @@ Rails.application.routes.draw do
     collection { post :import }
   end
  
- 
-  
+  get 'value' => 'esteems#new'
   get 'pages/about'
   get 'pages/contact'
   get 'home' => 'pages#home'
