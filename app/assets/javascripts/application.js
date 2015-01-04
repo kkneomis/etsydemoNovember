@@ -25,4 +25,3 @@ true).delay(50).slideUp();
     });
   });
 
-

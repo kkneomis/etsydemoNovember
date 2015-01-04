@@ -19,6 +19,8 @@ gem 'jquery-turbolinks'
 #gem 'will_paginate-bootstrap'
 #gem 'unicorn'
 #gem 'newrelic_rpm'
+
+
 group :production do
 
 gem 'pg'
