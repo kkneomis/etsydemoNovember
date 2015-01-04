@@ -12,9 +12,7 @@ def seller
   # GET /listings
   # GET /listings.json
   def index
-    if params[:q].blank?
-      @listings=Listing.all.order("id desc").limit(8)
-    end
+
    
    end
 

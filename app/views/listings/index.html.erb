@@ -18,28 +18,6 @@
   
  
   
-<div class="center"> 
-  <h1> BOOKS RECENTLY POSTED </h1> <br/>
-        <% @listings.each_slice(4) do |list_group| %>
-            <div class="row">
-              <% list_group.each do |listing| %>
-                
-                  <div class="col-md-3">
-       
-    <div class="pic"><%=link_to image_tag(listing.image.url(:thumb)), listing %></div>
-
-                    <div class="description"> 
-                      <h4> <%= listing.name.upcase %></h4>
-                        <p> <%= number_to_currency(listing.price) %></p>
-
-                    </div> <!--- description --->
-                   
-                  </div> <!--- colmd3 ---> 
-                
-             <% end %>
-        </div> <!--- row class --->
-        <% end %>
-    </div>      
 
     <div class="center">       
 
