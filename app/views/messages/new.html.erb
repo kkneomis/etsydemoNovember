@@ -1,16 +1,19 @@
 
+      <div class="page-header">
+        <h1>Your feedback is critical to our success</h1>
+      </div>
 
-<div class="col-md-6">  
-  <div class="center">
-    <h1>Your feedback is critical to our success <br> <small>Use this form to report any errors you find or simply tell us how you feel about BisonShare.</small> </h1>
-  </div>
+<div class="col-md-4">  
+  <div class="well">
+    <h3> <br> Use this form to report any errors you find or simply tell us how you feel about BisonShare.</h3><br/>
+    
+        <h4>BisonShare was developed by <%= link_to  "Simeon Kakpovi", pages_contact_path %>.<small> Believe you can and you're halfway there.</small></h4>
+    </div>
+ </div>
+
+<div class="col-md-4"> 
+  <%= render 'form' %>
 </div>
-
-
-<%= render 'form' %>
-
-<%= link_to 'Back', listings_path %>
-
 
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
@@ -28,13 +31,10 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
     </div>
-    <div class="col-md-4">  
+  
       <div class="fb-like" data-href="https://www.facebook.com/bisonshare" data-width="200px" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
  <br/>
     </div>
     
- <div class="col-md-12">
-        <h4>BisonShare was developed by <%= link_to  "Simeon Kakpovi", pages_contact_path %>.<small> Believe you can and you're halfway there.</small></h4>
-    </div>
- </div>
+
 </nav>
