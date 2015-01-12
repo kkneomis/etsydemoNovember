@@ -31,6 +31,7 @@ class ModelMailer < ActionMailer::Base
     @title=title
     @condition=condition
     @comment=comment
+    @email=email
     mail to: "bisonshare@gmail.com" , subject: "Esteem Requested"
   end
   

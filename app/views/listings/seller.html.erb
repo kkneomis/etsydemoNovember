@@ -32,6 +32,8 @@
                   <li><a href="#"><%= link_to 'View', listing, class: "btn btn-link" %></a></li>
                   <li><a href="#"><%= link_to 'Edit', edit_listing_path(listing), class:"btn btn-link" %></a></li>
               <li><a href="#"> <%= link_to 'Mark as sold', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %></a></li>
+              <li><a href="#"> <%= link_to 'Remove Listing', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-link" %></a></li>
+
             </ul>
           </div>
         </td>
