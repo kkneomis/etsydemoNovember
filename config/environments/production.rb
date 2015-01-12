@@ -94,7 +94,7 @@ config.action_mailer.smtp_settings = {
   :password => "e62ce6f1a0db56b9f0d9bbf2f29074eb"
 }
   
- Elasticsearch::Model.client = Elasticsearch::Client.new host: 'http://paas:9ee5ce73cb3f846cba4b1d8f7d2fabeb@bofur-us-east-1.searchly.com'
+ #Elasticsearch::Model.client = Elasticsearch::Client.new host: 'http://paas:9ee5ce73cb3f846cba4b1d8f7d2fabeb@bofur-us-east-1.searchly.com'
   
   
 end
