@@ -9,11 +9,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem "mini_magick"
 gem 'devise' 
-gem 'carrierwave' , :require => false
+gem 'carrierwave' 
 gem 'carrierwave-dropbox'
 gem "figaro"
 gem 'elasticsearch-model'
-gem 'elasticsearch-rails', :require => false
+gem 'elasticsearch-rails'
 gem 'jquery-turbolinks'  
 #gem 'will_paginate', '~> 3.0.5'
 #gem 'will_paginate-bootstrap'
