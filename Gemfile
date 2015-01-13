@@ -12,7 +12,7 @@ gem 'devise'
 gem 'carrierwave' 
 gem 'carrierwave-dropbox'
 gem "figaro"
-g#em 'elasticsearch-model'
+#gem 'elasticsearch-model'
 #gem 'elasticsearch-rails'
 gem 'jquery-turbolinks'  
 #gem 'will_paginate', '~> 3.0.5'
