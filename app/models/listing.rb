@@ -1,5 +1,5 @@
 
-require 'elasticsearch/model'
+#require 'elasticsearch/model'
 
 class Listing < ActiveRecord::Base
   
@@ -17,7 +17,7 @@ class Listing < ActiveRecord::Base
 
 end
 
- Listing.import # for auto sync model with elastic search
+ #Listing.import # for auto sync model with elastic search
     
 
 
