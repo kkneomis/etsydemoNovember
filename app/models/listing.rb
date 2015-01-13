@@ -11,8 +11,8 @@ class Listing < ActiveRecord::Base
   belongs_to :user
   has_many :orders
   
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  #include Elasticsearch::Model
+  #include Elasticsearch::Model::Callbacks
   
 
 end
