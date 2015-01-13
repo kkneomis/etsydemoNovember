@@ -1,5 +1,6 @@
 <div class="center">
-  <h1> Click on a Book for more details </h1>
+  <h1> Click on a book for more details <br/></h1> <h3><small> Use <kbd>control + f</kbd> to search the page for you book</small> </h3>
+  
     <div class="page-header">
     </div>
     <div class="form-group">
@@ -16,7 +17,7 @@
                 
                  <div class="col-md-3">
                    <div class= "well">
-                     <h4><%=link_to listing.name.upcase, listing %></h4>
+                     <h4><%=link_to listing.name.upcase, listing , data: { disable_with: "Loading..." }%></h4>
       
                         <p> <%= number_to_currency(listing.price) %></p>
 
