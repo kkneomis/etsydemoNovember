@@ -1,33 +1,34 @@
 
 <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
          <div class="showpic">
-          <% if (@listing.user_id == 7) && (!@listing.picurl.nil?) %>
-                  <%= link_to image_tag(@listing.picurl), @listing %>
-                <% else %>
-           <%= image_tag(@listing.image.url(:medium)) %>
-                <% end %>
+
+           <%= cl_image_tag(@listing.image_url(:thumbnail)) %>
+           
           </div>
   </div>
-  <div class="col-md-6">
-  
-    <h3 > <%= @listing.name.upcase %></h3>
 
-      <h4><strong>by:</strong> <%= @listing.author %></h4>
-      <h4><strong>price:</strong> <%= number_to_currency(@listing.price) %></h4>
-      <h4><strong>condition:</strong><%= @listing.condition %></h4>
-      <h4><strong>course:</strong><%= @listing.course %></h4>
+<div class="center">  
+ <div class="col-md-2"> 
+  <div class="list-group">
+    <h3 class="list-group-item active"> <%= @listing.name.upcase %></h3>
+     <div class="list-group-item">
+      <h4><strong>by: </strong> <%= @listing.author %></h4>
+      <h4><strong>price: </strong> <%= number_to_currency(@listing.price) %></h4>
+      <h4><strong>condition: </strong><%= @listing.condition %></h4>
+      <h4><strong>course: </strong><%= @listing.course %></h4>
        <% if @listing.isbn == nil %>
-        <h4><strong>isbn:</strong>N/A</h4>
+        <h4><strong>isbn: </strong>N/A</h4>
       <% else %>
         <h4><strong>isbn:</strong><%= @listing.isbn %></h4>
       <% end %>
        <% if @listing.amazon == false %>
             <h4>Owned by:<%= @listing.user.name %></h4>
       <% end %>
-
-
- <%= link_to 'Back', listings_path, class:"btn btn-link" %>    
+  </div>
+    </div>
+<div class="list-group-item">
+  <%= link_to 'Back', listings_path, class:"btn btn-primary" %>    
     <br>
     <% if @listing.amazon == false %>  
     <% if current_user != @listing.user %>
@@ -36,7 +37,7 @@
      </div>
     <% end %>
   <% end %>
-    
+  
                  <div class="form-group">
                   <% if @listing.amazon == true %>
                       <%= link_to "Buy on Amazon", @listing.link, class: "btn btn-success" %>
@@ -44,12 +45,12 @@
                 </div> 
     
 <% if current_user == @listing.user %>
-  <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-link" %>  
+  <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-primary" %>  
 <% end %>
-    
+      </div>
   </div>
 </div>
-
+</div>
  
     
     

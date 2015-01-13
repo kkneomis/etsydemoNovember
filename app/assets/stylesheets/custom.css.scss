@@ -13,12 +13,15 @@ h1 h2 h3 h4 h5 h6 p a{
 .search .well{
   width: 270px;
   background-color: #021E2C;
-  background-image: url("zenbg.png");
+
 }
 .search .well a{
   color: white;
 }
 
+.list-group-item{
+  width: 300px;
+}
 .well{
   background: #021E2C;
   color: white;
@@ -159,24 +162,6 @@ body{
   background-color: #D1D1D1;
 }
 
- .pic img{
-   padding: 5px; border: solid 1px #EFEFEF;
-   -moz-box-shadow: 1px 1px 5px #999;
-   -webkit-box-shadow: 1px 1px 5px #999; box-shadow: 1px 1px 5px #999;
- }
-
-.pic:hover img{
-   transform: scale(1.1);
-  transition: ease 1.5;
-}
-.pic:hover a{
-  background-color: white;
-}
- .showpic img{
-   padding: 5px; border: solid 1px #EFEFEF;
-   -moz-box-shadow: 1px 1px 5px #999;
-   -webkit-box-shadow: 1px 1px 5px #999; box-shadow: 1px 1px 5px #999;
- }
 
 .description{
   p {
