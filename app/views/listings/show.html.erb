@@ -2,9 +2,11 @@
 <div class="row">
         <div class="col-md-3">
          <div class="showpic">
-
+      <% if @listing.amazon == false %>
            <%= cl_image_tag(@listing.image_url(:thumbnail)) %>
-           
+       <% else %>   
+           <%= image_tag(@listing.picurl) %>
+       <% end %>
           </div>
   </div>
 
