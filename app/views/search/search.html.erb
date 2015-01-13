@@ -9,26 +9,23 @@
 
   
 <div class="center"> 
-     
+    <div class = "search" >
         <% @listings.each_slice(4) do |list_group| %>
             <div class="row">
               <% list_group.each do |listing| %>
                 
-                  <div class="col-md-3">
-       
-
-
-                    <div class="description"> 
-                      <h4> <%= listing.name.upcase %></h4>
+                 <div class="col-md-3">
+                   <div class= "well">
+                     <h4><%=link_to listing.name.upcase, listing %></h4>
+      
                         <p> <%= number_to_currency(listing.price) %></p>
 
-                    </div> <!--- description --->
                    
                   </div> <!--- colmd3 ---> 
-                
+                </div> 
              <% end %>
         </div> <!--- row class --->
         <% end %>
     </div>      
-      
+</div>       
  
