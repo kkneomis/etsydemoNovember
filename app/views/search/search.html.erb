@@ -21,10 +21,8 @@
  
   
 <div class="center"> 
-     
-        <% @listings.each_slice(4) do |list_group| %>
-            <div class="row">
-              <% list_group.each do |listing| %>
+
+              <% @listings.each do |listing| %>
                 
                   <div class="col-md-3">
        
@@ -40,8 +38,7 @@
                 
              <% end %>
         </div> <!--- row class --->
-        <% end %>
-    </div>      
+    
     <div class="center">       
       <%= will_paginate @listings, :renderer => BootstrapPagination::Rails %> <br/>
       <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary btn-lg" %>
