@@ -44,7 +44,7 @@
                   <% end %>
                 </div> 
     
-<% if current_user == @listing.user %>
+  <% if (current_user == @listing.user) && (@listing.amazon!= true) %>
   <%= link_to 'Edit', edit_listing_path(@listing), class:"btn btn-primary" %>  
 <% end %>
       </div>
