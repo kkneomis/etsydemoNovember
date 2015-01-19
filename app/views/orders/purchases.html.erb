@@ -13,7 +13,7 @@
 
   <% @orders.each do |order| %>
       <tr>
-        <td><%= image_tag order.listing.image.url(:thumb) %> </td>  
+        <td> <%= cl_image_tag(@listing.image_url(:thumbnail)) %></td>  
         <td><p>Title: </p><%= order.listing.name %> <br><p>Price: </p> <%= number_to_currency(order.listing.price) %> </td>  
         <td><%= order.detail %></td> 
         <td><%= order.seller.name %></td>  

@@ -1,7 +1,7 @@
 <h1>Book Request</h1>
 
 <div class="row">
-  <div class="col-md-3"><%= image_tag @listing.image_url(:thumb) %></div>
+  <div class="col-md-3"> <%= cl_image_tag(@listing.image_url(:thumbnail)) %></div>
  <div class="col-md-9">
    <h3 > <%= @listing.name.upcase %></h3>
       <p><strong>Author:</strong> <%= @listing.author %></p>
