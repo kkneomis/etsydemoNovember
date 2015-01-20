@@ -95,6 +95,6 @@ config.action_mailer.smtp_settings = {
 }
   
  #Elasticsearch::Model.client = Elasticsearch::Client.new host: 'http://paas:9ee5ce73cb3f846cba4b1d8f7d2fabeb@bofur-us-east-1.searchly.com'
-  
+  export STORMPATH_API_KEY_FILE_LOCATION="C:\Users\Lab User\Desktop\stormpath\apiKey-7J3FKWBYASCXKLPQASQA4YLHO.properties"
   
 end
