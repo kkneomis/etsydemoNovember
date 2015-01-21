@@ -11,11 +11,11 @@
    <% @listings.each do |listing| %>
       <tr>
         <td>
-          <% if listing.amazon == true %>
-                  <%= link_to image_tag(listing.picurl), listing %>
-                <% else %>
-                  <%= link_to image_tag(listing.image.url(:thumb)), listing %>
-                <% end %>
+          <% if @listing.amazon == false %>
+           <%= cl_image_tag(@listing.image_url(:thumbnail)) %>
+       <% else %>   
+           <%= image_tag(@listing.picurl) %>
+       <% end %>
         </td>  
         <td><%= listing.name %></td>  
         <td><%= listing.author %></td>  
