@@ -14,7 +14,11 @@
   <% @orders.each do |order| %>
       <tr>
         
-        <td><%= cl_image_tag(order.listing.image_url(:thumbnail)) %>
+        <td><% if listing.amazon == false %>
+           <%= cl_image_tag(listing.image_url(:thumbnail)) %>
+       <% else %>   
+           <%= image_tag(listing.picurl) %>
+       <% end %>
         </td>  
         <td><p>Title: </p><%= order.listing.name %> <br><p>Price: </p> <%= number_to_currency(order.listing.price) %> </td>  
         <td><%= order.detail %></td> 
