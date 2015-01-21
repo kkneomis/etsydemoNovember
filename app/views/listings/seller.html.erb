@@ -8,13 +8,14 @@
     <th class= "center">Action</th>
   </tr>
 
+  
    <% @listings.each do |listing| %>
       <tr>
         <td>
-          <% if @listing.amazon == false %>
-           <%= cl_image_tag(@listing.image_url(:thumbnail)) %>
+          <% if listing.amazon == false %>
+           <%= cl_image_tag(listing.image_url(:thumbnail)) %>
        <% else %>   
-           <%= image_tag(@listing.picurl) %>
+           <%= image_tag(listing.picurl) %>
        <% end %>
         </td>  
         <td><%= listing.name %></td>  
