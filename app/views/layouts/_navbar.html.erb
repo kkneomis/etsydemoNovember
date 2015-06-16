@@ -1,17 +1,23 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Bisonshare</a>
+    </div>
 
-<nav class="navbar navbar-default " role="navigation">
-  <div class="container-fuid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-       
-      
       <ul class="nav navbar-nav">
-        <li> <%= link_to "BisonShare", listings_path , data: { disable_with: "BisonShare" } %></li>
+        
         <li> <%= link_to "Getting Started", pages_getting_started_path , data: { disable_with: "Getting Started" }%></li>
         <!-----<li> <%= link_to "About", pages_about_path , data: { disable_with: "About" }%></li----->
         <li> <%= link_to "Contact", contact_path , data: { disable_with: "Contact" }%></li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
                 <li class="dropdown">
@@ -68,9 +74,8 @@
         <% end %>
 
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 
 
-		

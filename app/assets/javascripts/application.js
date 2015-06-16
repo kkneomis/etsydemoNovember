@@ -13,6 +13,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require parallax.min
 //= require_tree .
 
 $(document).on("page:change", function() {

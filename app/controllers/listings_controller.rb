@@ -12,7 +12,7 @@ def seller
   # GET /listings
   # GET /listings.json
   def index
-    
+     @listings = Listing.all.where(is_active: true).where(amazon: false).order("created_at DESC")
    
    end
 

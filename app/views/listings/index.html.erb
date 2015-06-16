@@ -1,32 +1,13 @@
-
-    <div class="page-header">
- 
-      <div class="jumbotron"> 
-       <div class="center">
-        <h1>BISONSHARE </h1>
-       </div>
-       </div>       
-
-       <div class="col-m-6">
-
-   </div>    
-    </div>
-<div class="center">
-<div class="col-md-6">
-  <div class="well">
-      <h2> Find the books you need quickly!</h2><br/>
-    <%= link_to 'Find a book!', search_path, class: "btn btn-primary", data: { disable_with: "Loading..." } %>
-    </div>
+<div class="index">
+<% @listings.each_slice(4) do |list_group| %>
+            <ul class="rig columns-4">
+              <% list_group.each do |listing| %>
+                <li>
+                     <%= link_to cl_image_tag(listing.image_url(:thumbnail)), listing %>
+                    <h3><%=listing.name%></h3>
+                      <h4> <%= number_to_currency(listing.price) %></h4>
+                  </li>
+	              <% end %>
+            </ul>
+ <% end %>
 </div>
-
- <div class="col-md-6">
-		<div class="well">
-      <h2> Sell your books and get fast cash!</h2><br/>
-      <%= link_to 'Post a book!', new_listing_path, class: "btn btn-primary", data: { disable_with: "Loading..." } %>
-    </div>
-</div>
-
-          
-      
-      
-    </div>
