@@ -14,7 +14,7 @@
     	<div class="col-md-12">
         
         <% list_group.each do |listing| %>
-			    <div class="col-sm-6 col-md-4">
+			     <div class="col-sm-6 col-md-4">
 				<div class="thumbnail" >
           <h4 class="text-center"><span class="label label-info"><%=listing.user.name%></span></h4>
 					<%= link_to cl_image_tag(listing.image_url(:thumbnail)), listing %>
@@ -37,9 +37,10 @@
 					</div>
 				</div>
 			</div>
-        <% end %>
+        
         
       </div> 
+        <% end %>
 	  </div>
  <% end %> 
 </div>
