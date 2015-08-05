@@ -2,15 +2,15 @@
 	<div class="container">
 		<div class="row" id="starts">
 			<div class="col-md-12 col-sm-12 col-xs-12 work-list">
-				<h2 class="text-center portfolio-text">Portfolio</h2>
+				<h2 class="text-center portfolio-text">Books for sale on campus</h2>
 			</div>
 		</div>
 	</div>
 </div>
 
-  <input class="search" placeholder="Search" />
+  <input placeholder="Search" />
 
-<div class="container list" >
+<div class="container " >
   <% @listings.each_slice(8) do |list_group| %>
     <div class="row">
     	<div class="col-md-12">
@@ -22,7 +22,7 @@
 					<%= link_to cl_image_tag(listing.image_url(:thumbnail)), listing %>
 					<div class="caption">
 						<div class="row">
-							<div class="col-md-12 col-xs-12">
+							<div class="col-md-12 col-xs-12 name">
 								<p class="name"><%=listing.name%></p>
 							</div>
 							<div class="col-md-12 col-xs-12 price">
@@ -50,10 +50,8 @@
 </div>
 
 
-<script>
-  var options = {
-    valueNames: [ 'name', 'seller' ]
-  };
-
-  var userList = new List('books', options);
-</script>
+<style>
+  .name {
+    overflow: hidden;
+  }
+</style>
