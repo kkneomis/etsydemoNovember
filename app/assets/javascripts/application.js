@@ -18,6 +18,7 @@
 //= require jquery.countTo
 //= require jquery.waypoints.min
 //= require lightbox.min
+//= require filter
 //= require_tree .
 
 $(document).on("page:change", function() {
