@@ -3,7 +3,7 @@
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
 // or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
+//s
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
 //
@@ -13,7 +13,13 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require parallax.min
+//= require bootstrap
+//= require bootstrap.min
+//= require jquery.countTo
+//= require jquery.waypoints.min
+//= require lightbox.min
+//= require npm
+//= require scripts
 //= require_tree .
 
 $(document).on("page:change", function() {

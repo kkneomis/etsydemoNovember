@@ -10,7 +10,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :thumbnail do
     process :eager => true
-    process :resize_to_fill => [240, 320, :face]
+    process :resize_to_fill => [340, 235, :face]
   end
 
    def default_url 

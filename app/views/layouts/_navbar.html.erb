@@ -1,25 +1,25 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Bisonshare</a>
-    </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        
-        <li> <%= link_to "Getting Started", pages_getting_started_path , data: { disable_with: "Getting Started" }%></li>
-        <!-----<li> <%= link_to "About", pages_about_path , data: { disable_with: "About" }%></li----->
-        <li> <%= link_to "Contact", contact_path , data: { disable_with: "Contact" }%></li>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
+
+<header class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 ">
+				<div class="navbar-header">
+					    <button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar">
+					        <span class="glyphicon glyphicon-align-justify"></span>
+					    </button>
+      					<a class="navbar-brand logo" href="/">BisonShare</a>
+    			</div>
+			</div>
+			<div class="col-md-8">
+				<nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
+					<ul class="nav navbar-nav navbar-right menu">
+							<li> <%= link_to "Getting Started", pages_getting_started_path %></li>
+              <li> <%= link_to "About", pages_about_path %></li>
+              <li> <%= link_to "Contact", contact_path %></li>
+            
+            
+							<% if user_signed_in? %>
                 <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-wrench icon-size"></span> Manage<span class="glyphicon glyphicon-chevron-down"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -56,10 +56,10 @@
                                 <div class="row">
                                     <div class="col-lg-12">  
                                       <p >
-                                            <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-block btn-sm" , data: { disable_with: "Loading..." }%>
+                                            <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-block " %>
                                         </p>
                                         <p>
-                                           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"btn btn-danger btn-block", data: { disable_with: "Signing out..." } %>
+                                           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"btn btn-danger btn-block" %>
                                         </p>
                                     </div>
                                 </div>
@@ -72,10 +72,24 @@
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <li><%= link_to "Sign In", new_user_session_path %></li>
         <% end %>
-
-      </ul>
+					</ul>
+           
+				</nav>
+    <div class="row">
+        <div class="btn-group" role="group" aria-label="Default button group">
+            <button type="button" class="btn btn-sm"><a href="/listings/new"><i class="fa fa-pencil fa-5x" ></i></a></button>
+            <button type="button" class="btn btn-sm"><a href="/listings"><i class="fa fa-search fa-5x" ></i></a></button>
+        </div>
     </div>
-  </div>
-</nav>
+          
+			</div>
+		</div>
+	</div>
+</header>
+
+<head>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+</head>
+
 
 

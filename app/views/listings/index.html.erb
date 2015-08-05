@@ -1,13 +1,47 @@
-<div class="index">
-<% @listings.each_slice(4) do |list_group| %>
-            <ul class="rig columns-4">
-              <% list_group.each do |listing| %>
-                <li>
-                     <%= link_to cl_image_tag(listing.image_url(:thumbnail)), listing %>
-                    <h3><%=listing.name%></h3>
-                      <h4> <%= number_to_currency(listing.price) %></h4>
-                  </li>
-	              <% end %>
-            </ul>
- <% end %>
+<div class="container-fluid work" id="work">
+	<div class="container">
+		<div class="row" id="starts">
+			<div class="col-md-12 col-sm-12 col-xs-12 work-list">
+				<h2 class="text-center portfolio-text">Portfolio</h2>
+			</div>
+		</div>
+	</div>
 </div>
+
+<div class="container">
+  <% @listings.each_slice(4) do |list_group| %>
+    <div class="row">
+    	<div class="col-md-12">
+        
+        <% list_group.each do |listing| %>
+			    <div class="col-sm-6 col-md-4">
+				<div class="thumbnail" >
+          <h4 class="text-center"><span class="label label-info"><%=listing.user.name%></span></h4>
+					<%= link_to cl_image_tag(listing.image_url(:thumbnail)), listing %>
+					<div class="caption">
+						<div class="row">
+							<div class="col-md-6 col-xs-6">
+								<h3><%=listing.name%></h3>
+							</div>
+							<div class="col-md-6 col-xs-6 price">
+								<h3>
+								<label><%= number_to_currency(listing.price) %></label></h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+                <%= link_to "View details", listing, class:"btn btn-success btn-block" %>
+						</div>
+
+						<p> </p>
+					</div>
+				</div>
+			</div>
+        <% end %>
+        
+      </div> 
+	  </div>
+ <% end %> 
+</div>
+
+
