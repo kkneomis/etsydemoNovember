@@ -1,5 +1,16 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+
+<div class="col-md-6 col-md-offset-3">
+
+  <div class="container-fluid work" id="work">
+	<div class="container">
+		<div class="row" id="starts">
+			<div class="col-md-12 col-sm-12 col-xs-12 work-list">
+				<h2>Edit <%= resource_name.to_s.humanize %></h2>
+			</div>
+		</div>
+	</div>
+</div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -42,3 +53,5 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 
 <%= link_to "Back", :back %>
+
+</div>

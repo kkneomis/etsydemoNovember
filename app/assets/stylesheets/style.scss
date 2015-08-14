@@ -13,7 +13,7 @@
 }
 .logo
 {
-	color: #fa3447;
+	color: #fff;
 	font-weight: 100;
 	font-size: 30px;
 	padding: 0px !important;
@@ -167,7 +167,7 @@
 	font-weight: 300;
 	font-size: 42px;
 	text-align: center;
-	color: #8AB839;
+	color: #212A3F;
 	text-transform: uppercase;
 }
 .desc p
@@ -185,16 +185,17 @@
 .desc p a
 {
 	text-decoration: none;
-	color: #8ab839;
+	color: #FFFFFF;
 }
 .features
 {
-	background: #fa3447;
+	background: #212A3F;
 	padding: 60px 0px;
 }
 .features-text
 {
 	font-family: 'Roboto', sans-serif;
+  color:white;
 	font-weight: 700;
 	letter-spacing: 5px;
 	margin-bottom:30px;
@@ -241,7 +242,7 @@ h2.features-text::after {
 {
 
 	font-family: 'Roboto', sans-serif;
-	color: #2e2e2e;
+	color: #fff;
 	font-weight: 400;
 	font-size: 25px;
 
@@ -251,7 +252,7 @@ h2.features-text::after {
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
 	font-size: 15px;
-	color: #2E2E2E;
+	color: #fff;
 }
 .notes
 {

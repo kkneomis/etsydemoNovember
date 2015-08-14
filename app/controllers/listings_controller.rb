@@ -12,7 +12,14 @@ def seller
   # GET /listings
   # GET /listings.json
   def index
-     @listings = Listing.all.where(is_active: true).where(amazon: false).order("created_at DESC")
+    if params[:search]
+      @listings = Listing.search(params[:search]).order("created_at DESC")
+      # search = PgSearch.multisearch(params[:search])
+      # @listings = search.map(&:searchable).paginate(:page => params[:page], :per_page => 12)
+    else
+      @listings = Listing.all.where(is_active: true).where(amazon: false).order("created_at DESC")
+    end
+     
    
    end
 

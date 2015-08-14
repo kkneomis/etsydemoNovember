@@ -1,9 +1,19 @@
+<div class="container-fluid work" id="work">
+	<div class="container">
+		<div class="row" id="starts">
+			<div class="col-md-12 col-sm-12 col-xs-12 work-list">
+				
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
          <div class="showpic">
            <% if @listing.amazon != true %>
-           <%= cl_image_tag(@listing.image_url(:thumbnail)) %>
+           <%= cl_image_tag(@listing.image_url(:display)) %>
        <% else %>   
            <%= image_tag(@listing.picurl) %>
        <% end %>
@@ -11,7 +21,7 @@
   </div>
 
 <div class="center">  
- <div class="col-md-2"> 
+ <div class="col-md-6"> 
   <div class="list-group">
     <h3 class="list-group-item active"> <%= @listing.name.upcase %></h3>
      <div class="list-group-item">
@@ -56,6 +66,14 @@
  
     
     
-
+<div class="container-fluid work" id="work">
+	<div class="container">
+		<div class="row" id="starts">
+			<div class="col-md-12 col-sm-12 col-xs-12 work-list">
+				
+			</div>
+		</div>
+	</div>
+</div>
 
 

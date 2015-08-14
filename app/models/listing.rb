@@ -14,13 +14,9 @@ class Listing < ActiveRecord::Base
   #include Elasticsearch::Model
   #include Elasticsearch::Model::Callbacks
   
- def self.search(search)
-  if search
-    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-  else
-    find(:all)
+ def self.search(query)
+   where("name like ?", "%#{query}%")
   end
-end
 
 end
 
